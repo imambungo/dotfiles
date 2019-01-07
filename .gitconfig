@@ -1,0 +1,10 @@
+[user]
+	email = imambungo@gmail.com
+	name = M. Imam Pratama
+[credential "https://github.com"]
+	username = imambungo
+[credential]
+	helper = cache --timeout=18000
+[core]
+	pager = less -x1,5
+	editor = vim
