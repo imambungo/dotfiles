@@ -123,6 +123,7 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
+#pake `type namaalias` untuk ngecek apakah namaalias sudah terpakai
 alias lc="colorls"
 alias hackmode="cd ~/cool-retro-term && ./cool-retro-term"
 alias restart="sudo grub-reboot 2 && sudo reboot"
@@ -134,8 +135,9 @@ alias piano="cd /home/imampt/bin/clones/piano-rs;./target/release/piano-rs"
 alias tohtdocs="cd /opt/lampp/htdocs"
 alias xsql="/opt/lampp/bin/mysql -u root -p"
 alias edit=vim
+alias op="xdg-open" 
 
-# untuk set tab size git add -p jadi 4
+# untuk set tab size `cat` jadi 4
 tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
