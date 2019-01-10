@@ -142,6 +142,3 @@ git() {
 		command git "$@"
 	fi
 }
-
-#https://stackoverflow.com/questions/14286844/zsh-not-recognizing-my-aliases
-source /home/imampt/.bash_profile
