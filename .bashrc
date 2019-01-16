@@ -136,6 +136,9 @@ alias tohtdocs="cd /opt/lampp/htdocs"
 alias xsql="/opt/lampp/bin/mysql -u root -p"
 alias edit=vim
 alias op="xdg-open" 
+alias sudo='sudo '
+alias hs='history | grep'
+alias gdcol='git diff --color-words=.'
 
 # untuk set tab size `cat` jadi 4
 tabs -4
@@ -159,3 +162,6 @@ git() {
 		command git "$@"
 	fi
 }
+
+
+source ~/bin/script/notify_after_command_executed/postexec_notify

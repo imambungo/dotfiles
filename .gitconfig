@@ -8,3 +8,5 @@
 [core]
 	pager = less -x1,5
 	editor = vim
+[alias]
+	ignored = !git ls-files -v | grep "^[[:lower:]]"

@@ -112,6 +112,9 @@ alias piano="cd /home/imampt/bin/clones/piano-rs;./target/release/piano-rs"
 alias tohtdocs="cd /opt/lampp/htdocs"
 alias xsql="/opt/lampp/bin/mysql -u root -p"
 alias op="xdg-open" 
+alias sudo='sudo '
+alias hs='history | grep'
+alias gdcol='git diff --color-words=.'
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
@@ -120,8 +123,7 @@ tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
-# source $HOME/.zbell.sh
-source /home/imampt/Downloads/Compressed/notify_after_command_executed-master/postexec_notify
+source ~/bin/script/notify_after_command_executed/postexec_notify
 
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
 
