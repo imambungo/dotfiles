@@ -157,7 +157,7 @@ git() {
 			command git add -p "$3"
 		fi
 		tabs -4
-		echo sukses
+		#echo sukses
 	else
 		command git "$@"
 	fi

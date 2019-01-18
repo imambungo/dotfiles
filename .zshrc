@@ -115,6 +115,7 @@ alias op="xdg-open"
 alias sudo='sudo '
 alias hs='history | grep'
 alias gdcol='git diff --color-words=.'
+alias gdchar='git diff --word-diff-regex=.'
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
@@ -139,7 +140,7 @@ git() {
 			command git add -p "$3"
 		fi
 		tabs -4
-		echo sukses
+		#echo sukses
 	else
 		command git "$@"
 	fi
