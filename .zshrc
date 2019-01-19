@@ -100,22 +100,7 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
-#pake `type namaalias` untuk ngecek apakah namaalias sudah terpakai
-alias lc="colorls"
-alias hackmode="cd ~/cool-retro-term && ./cool-retro-term"
-alias restart="sudo grub-reboot 2 && sudo reboot"
-alias run="javac Main.java && java Main"
-# alias updatevsc="/home/imampt/Documents/Clone\ Repo/vscode-updater/update.sh"
-alias updatevsc="/home/imampt/updatevsc.sh"
-alias sql="/home/imampt/bin/loginmysql"
-alias piano="cd /home/imampt/bin/clones/piano-rs;./target/release/piano-rs"
-alias tohtdocs="cd /opt/lampp/htdocs"
-alias xsql="/opt/lampp/bin/mysql -u root -p"
-alias op="xdg-open" 
-alias sudo='sudo '
-alias hs='history | grep'
-alias gdcol='git diff --color-words=.'
-alias gdchar='git diff --word-diff-regex=.'
+source .alias
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
