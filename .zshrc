@@ -101,6 +101,8 @@ chmod +x ~/.vocab
 alias clear="clear;~/.vocab"
 
 source .alias
+source .functions
+
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
@@ -112,21 +114,3 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 source ~/bin/script/notify_after_command_executed/postexec_notify
 
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
-
-git() {
-	if [[ "$1" == "add" ]] &&
-	   [[ "$2" == "-p" ]] || [[ "$2" == "--patch" ]]
-	then
-		tabs -c3
-		if [[ "$#" -eq 2 ]]
-		then
-			command git add -p
-		else
-			command git add -p "$3"
-		fi
-		tabs -4
-		#echo sukses
-	else
-		command git "$@"
-	fi
-}

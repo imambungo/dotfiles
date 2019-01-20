@@ -124,29 +124,11 @@ chmod +x ~/.vocab
 alias clear="clear;~/.vocab"
 
 . .alias
+. .functions
 
 # untuk set tab size `cat` jadi 4
 tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
-
-git() {
-	if [[ "$1" == "add" ]] &&
-	   [[ "$2" == "-p" ]] || [[ "$2" == "--patch" ]]
-	then
-		tabs -c3
-		if [[ "$#" -eq 2 ]]
-		then
-			command git add -p
-		else
-			command git add -p "$3"
-		fi
-		tabs -4
-		#echo sukses
-	else
-		command git "$@"
-	fi
-}
-
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
