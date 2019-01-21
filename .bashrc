@@ -123,8 +123,8 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
-. .alias
-. .functions
+. ~/.alias
+. ~/.functions
 
 # untuk set tab size `cat` jadi 4
 tabs -4

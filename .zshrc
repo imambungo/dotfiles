@@ -100,8 +100,8 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
-source .alias
-source .functions
+source ~/.alias
+source ~/.functions
 
 fignore=(\~ class )
 
