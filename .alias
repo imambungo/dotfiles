@@ -12,9 +12,15 @@ alias xsql="/opt/lampp/bin/mysql -u root -p"
 alias edit=vim
 alias op="xdg-open"
 alias sudo='sudo '
+alias man='man '
 alias hs='history | grep'
 alias gdcol='git diff --color-words=.'
 alias gdchar='git diff --word-diff-regex=.'
 alias hst='history'
 alias gglog='git log --graph --stat --all --date-order'
-alias gulog='gglog -p -m'
+alias uglog='gglog -p -m'
+alias sglog='git log --oneline --graph --all --date-order'
+alias mglog='git log --graph --date-order --all --pretty=format:"%C(bold blue)%s%C(auto)%d%n%C(yellow)%h%Creset %an %C(magenta)(%ar)%Creset at %C(cyan)%cd%n%b" --date=format:"%H:%M"'
+alias enin='~/bin/script/GT-bash-client/translate.sh en in'
+alias inen='~/bin/script/GT-bash-client/translate.sh in en'
+alias ud='~/bin/script/ud/ud'
