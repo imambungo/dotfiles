@@ -106,7 +106,7 @@ source ~/.functions
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
-#atau env TERM=linux setterm -regtabs 4
+#atau env TERM=linux setterm -regtabs 4 (bash)
 tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
