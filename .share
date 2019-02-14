@@ -1,0 +1,1 @@
+#bind '"\C-p": "\C-e\C-u xsel -b <<"EOF"\n\C-y\nEOF\n\C-y"'

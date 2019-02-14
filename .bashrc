@@ -125,6 +125,7 @@ alias clear="clear;~/.vocab"
 
 . ~/.alias
 . ~/.functions
+. ~/.share
 
 # untuk set tab size `cat` jadi 4
 tabs -4

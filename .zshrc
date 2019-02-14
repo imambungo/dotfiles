@@ -102,6 +102,7 @@ alias clear="clear;~/.vocab"
 
 source ~/.alias
 source ~/.functions
+source ~/.share
 
 fignore=(\~ class )
 
