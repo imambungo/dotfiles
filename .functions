@@ -33,3 +33,8 @@ to()
 	cd "$1"
 	ls
 }
+
+gcheck()
+{
+	inen "$(enin "$1")"
+}
