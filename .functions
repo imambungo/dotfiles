@@ -38,3 +38,47 @@ gcheck()
 {
 	inen "$(enin "$1")"
 }
+
+mkcd()
+{
+	mkdir $1
+	cd $1
+}
+
+cpcontent()
+{
+	echo "xsel -b < $1"
+	xsel -b < $1
+}
+
+# Source: https://stackoverflow.com/a/638980/9157799
+checkfile()
+{
+	if [ -f $1 ]
+	then
+		echo $1 found
+	else
+		echo $1 not found
+	fi
+}
+
+# Source: https://stackoverflow.com/a/59839/9157799
+checkdir()
+{
+	if [ -d $1 ]
+	then
+		echo $1 found
+	else
+		echo $1 not found
+	fi
+}
+
+run()
+{
+	if [ ! -d Classes ]
+	then
+		mkdir Classes
+	fi
+
+	javac -d Classes $1.java && java -cp Classes $1
+}

@@ -1,10 +1,11 @@
 #pake `type namaalias` untuk ngecek apakah namaalias sudah terpakai
+
 alias lc="colorls"
 alias hackmode="cd ~/cool-retro-term && ./cool-retro-term"
 
 # restart ke windows
 alias restart="sudo grub-reboot 2 && sudo reboot"
-alias run="javac Main.java && java Main"
+# alias run="javac Main.java && java Main"
 # alias updatevsc="/home/imampt/Documents/Clone\ Repo/vscode-updater/update.sh"
 alias updatevsc="/home/imampt/updatevsc.sh"
 alias sql="/home/imampt/bin/loginmysql"
@@ -32,3 +33,7 @@ alias getc='history | tail -n 1 | sed "s/[[:digit:]]*  //" | sed "s/^#//" | tr -
 alias wpart='lsblk | grep sda | grep G | grep -Ev "disk|/|SWAP"'
 alias view='google-chrome'
 alias slog='~/bin/script/startup/GalaTimer/slog'
+alias myalias='vim ~/.alias'
+alias myfunc='vim ~/.functions'
+alias vimrc='vim ~/.vimrc'
+alias note='vim ~/bin/note/note'
