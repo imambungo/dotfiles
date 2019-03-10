@@ -78,6 +78,7 @@ run()
 	if [ ! -d Classes ]
 	then
 		mkdir Classes
+		echo "mkdir Classes"
 	fi
 
 	# Source: https://stackoverflow.com/a/19858692/9157799
@@ -87,7 +88,36 @@ run()
 		1=${1:0:-5}
 	fi
 
-	javac -d Classes $1.java && java -cp Classes $1
+	if [ $# -eq 2 ] # Source: https://stackoverflow.com/a/6482403/9157799
+	then
+		echo "javac -d Classes -cp \"Jars/*:Packages:$2\" $1.java && java -cp \"Jars/*:Classes:$2\" $1"
+		javac -d Classes -cp "Jars/*:Packages:$2" $1.java && java -cp "Jars/*:Classes:$2" $1
+	else
+		echo "javac -d Classes -cp \"Jars/*:Packages\" $1.java && java -cp \"Jars/*:Classes\" $1"
+		javac -d Classes -cp "Jars/*:Packages" $1.java && java -cp "Jars/*:Classes" $1
+	fi
+}
+
+cpac()
+{
+	if [ $1 = "" ]
+	then
+		echo "Please specify the source files location"
+	else
+		if [ ! -d Classes ]
+		then
+			dqt='"'
+			mkdir Classes
+			echo "${dqt}Classes${dqt} directory created"
+		fi
+
+		if [ $# -eq 1 ]
+		then
+			javac -d Classes $(find $1 -name '*.java')
+		else
+			javac -d Classes -cp $2 $(find $1 -name '*.java')
+		fi
+	fi
 }
 
 # ! Use quotation mark if you use more than 1 word
