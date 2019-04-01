@@ -126,3 +126,26 @@ findfile()
 {
 	find . -name "*$1*"
 }
+
+copy()
+{
+	if [ $1 = "" ]
+	then
+		pwd | xclip
+	else
+		# Source: https://stackoverflow.com/a/5265775/9157799
+		readlink -f $1 | xclip
+	fi
+}
+
+paste()
+{
+	pathToCopy=$(xclip -o)
+
+	if [ -d $pathToCopy ] # If it's a directory
+	then
+		cp -r $pathToCopy .
+	else
+		cp $pathToCopy .
+	fi
+}
