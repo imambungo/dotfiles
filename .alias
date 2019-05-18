@@ -46,3 +46,4 @@ alias tree3='tree -L 3'
 	# view GitHub repo of current directory
 	# Source: https://gist.github.com/igrigorik/6666860#gistcomment-2888787
 alias gh="xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)"
+alias catat="vim ~/catat"

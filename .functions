@@ -75,12 +75,13 @@ checkdir()
 
 run()
 {
-	if [ ! -d Classes ]
+	if [ ! -d Classes ] && [ ${1: -5} = ".java" ]
 	then
 		mkdir Classes
 		echo "mkdir Classes"
 	fi
 
+	# if there is 1 argument and the last 5 char of it is ".java"
 	# Source: https://stackoverflow.com/a/19858692/9157799
 	if [ ${1: -5} = ".java" ]
 	then
@@ -90,17 +91,17 @@ run()
 	then
 		1=${1:0:-4}
 
-		echo "g++ -o $1 $1.cpp && ./$1"
+		echo "g++ -o $1 $1.cpp && ./$1\nOutput:"
 		g++ -o $1 $1.cpp && ./$1
 		return
 	fi
 
 	if [ $# -eq 2 ] # Source: https://stackoverflow.com/a/6482403/9157799
 	then
-		echo "javac -d Classes -cp \".:Jars/*:Packages:$2\" $1.java && java -cp \"Classes:$2\" $1"
+		echo "javac -d Classes -cp \".:Jars/*:Packages:$2\" $1.java && java -cp \"Classes:$2\" $1\nOutput:"
 		javac -d Classes -cp ".:Jars/*:Packages:$2" $1.java && java -cp "Classes:$2" $1
 	else
-		echo "javac -d Classes -cp \".:Jars/*:Packages\" $1.java && java -cp \"Classes\" $1"
+		echo "javac -d Classes -cp \".:Jars/*:Packages\" $1.java && java -cp \"Classes\" $1\nOutput:"
 		javac -d Classes -cp ".:Jars/*:Packages" $1.java && java -cp "Classes" $1
 	fi
 }
