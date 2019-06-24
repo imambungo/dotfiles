@@ -115,3 +115,7 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 source ~/bin/script/notify_after_command_executed/postexec_notify
 
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
+
+# https://superuser.com/q/583583/943615
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
