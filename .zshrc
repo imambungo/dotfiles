@@ -117,5 +117,9 @@ source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
 
 # https://superuser.com/q/583583/943615
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
+# https://unix.stackexchange.com/a/97844/307359
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
