@@ -159,6 +159,17 @@ findfile()
 	find . -name "*$1*"
 }
 
+findinfiles()
+{
+	if [ $# -gt 1 ]
+	then
+		echo "Put multiple words in double quotes!"
+	else
+		echo "grep -iRI \"$@\""
+		grep -iRI "$@"
+	fi
+}
+
 copy()
 {
 	if [ $1 = "" ]
