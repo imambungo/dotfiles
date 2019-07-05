@@ -156,6 +156,7 @@ cpac()
 #	findfile 'ompetiti*gram'
 findfile()
 {
+	echo "find . -name \"*$1*\""
 	find . -name "*$1*"
 }
 

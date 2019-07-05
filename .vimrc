@@ -116,3 +116,10 @@ highlight LineNr ctermfg=grey
 highlight Comment    ctermfg=DarkGrey
 hi ColorColumn ctermbg=239
 "highlight Identifier ctermfg=99AA00
+
+set foldmethod=indent
+"au BufRead source: https://stackoverflow.com/a/8316817/9157799
+au BufRead * normal zR
+"below: save fold state
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
