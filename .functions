@@ -193,3 +193,11 @@ paste()
 		cp $pathToCopy .
 	fi
 }
+
+watchgdb()
+{
+	#echo '' > gdb.out
+	cat /dev/null > gdb.out
+	echo "tail -f gdb.out"
+	tail -f gdb.out
+}
