@@ -98,8 +98,8 @@ run()
 	elif [ ${1: -4} = ".cpp" ]
 	then
 		executableName=${1:0:-4} # Jika arg pertama "Main.cpp", maka executableName -> "Main"
-		echo "g++ -o $executableName $@ && ./$executableName\nOutput:"
-		g++ -o $executableName $@ && ./$executableName
+		echo "g++ -g -o $executableName $@ && ./$executableName\nOutput:"
+		g++ -g -o $executableName $@ && ./$executableName
 		return
 	fi
 }

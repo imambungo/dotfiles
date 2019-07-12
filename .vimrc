@@ -123,3 +123,5 @@ au BufRead * normal zR
 "below: save fold state
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+
+Plugin 'w0rp/ale'
