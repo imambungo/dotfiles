@@ -201,3 +201,16 @@ watchgdb()
 	echo "tail -f gdb.out"
 	tail -f gdb.out
 }
+
+cpdiff()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: cpdiff [file1] [file2]"
+	fi
+
+	nl $1 > deletethis
+	nl $2 > deletethistoo
+	gdcol --no-index deletethis deletethistoo
+	rm deletethis deletethistoo
+}
