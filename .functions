@@ -207,10 +207,23 @@ cpdiff()
 	if [ $# -ne 2 ]
 	then
 		echo -e "usage: cpdiff [file1] [file2]"
+		return
 	fi
 
 	nl $1 > deletethis
 	nl $2 > deletethistoo
 	gdcol --no-index deletethis deletethistoo
 	rm deletethis deletethistoo
+}
+
+# Source: https://stackoverflow.com/a/11145362/9157799
+replaceline()
+{
+	if [ $# -ne 3 ]
+	then
+		echo -e "usage: replaceline [line number] [new string] [file]"
+		return
+	fi
+
+	sed -i "$1s/.*/$2/" $3
 }

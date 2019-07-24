@@ -133,3 +133,4 @@ tabs -4
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
+source ~/.config/up/up.sh

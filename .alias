@@ -49,3 +49,4 @@ alias tree3='tree -L 3'
 alias gh="xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)"
 alias catat="vim ~/catat"
 alias gdb='gdbtui '
+alias td='termdown '
