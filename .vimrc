@@ -125,3 +125,20 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 Plugin 'w0rp/ale'
+
+" MRU (Most Recently Used)
+" source: https://stackoverflow.com/a/22701319/9157799
+" this is our 'main' function: it couldn't be simpler
+function! Mru(arg)
+    execute 'edit ' . a:arg
+endfunction
+
+" the completion function, again it's very simple
+function! MRUComplete(ArgLead, CmdLine, CursorPos)
+    return filter(copy(v:oldfiles), 'v:val =~ a:ArgLead')
+endfunction
+
+" the actual command
+" it accepts only one argument
+" it's set to use the function above for completion
+command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
