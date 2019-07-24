@@ -227,3 +227,15 @@ replaceline()
 
 	sed -i "$1s/.*/$2/" $3
 }
+
+# Source: https://stackoverflow.com/a/20026432/9157799
+getlinenumber()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: getlinenumber [substring] [file]"
+		return
+	fi
+
+	awk "/$1/{print NR; exit}" $2
+}
