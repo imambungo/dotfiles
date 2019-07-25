@@ -289,6 +289,18 @@ insertlinetotop()
 	sed -i "1i$1" $2
 }
 
+# Source: https://stackoverflow.com/a/12022403/9157799
+numberofline()
+{
+	if [ $# -ne 1 ]
+	then
+		echo -e "usage: numberofline [file]"
+		return
+	fi
+
+	wc -l < $1
+}
+
 # view GitHub repo of current directory
 # Source: https://gist.github.com/igrigorik/6666860#gistcomment-2888787
 gh()
