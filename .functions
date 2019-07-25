@@ -295,3 +295,10 @@ gh()
 {
 	xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)
 }
+
+# Source: https://unix.stackexchange.com/a/207214/307359
+# Source: https://askubuntu.com/a/596827/356625
+getdir()
+{
+	echo $(dirs -c; dirs | sed 's/ /\\ /g')
+}
