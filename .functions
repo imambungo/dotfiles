@@ -384,3 +384,13 @@ proposejumpportal()
 	fi
 	insertlinetotop "$PWD" ~/.jumpportals
 }
+
+o()
+{
+	if [ $# -eq 1 ]
+	then
+		proposejumpportal
+	fi
+
+	xdg-open "$@"
+}
