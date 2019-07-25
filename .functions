@@ -239,3 +239,16 @@ getlinenumber()
 
 	awk "/$1/{print NR; exit}" $2
 }
+
+# Source: https://stackoverflow.com/a/17794626/9157799
+removelastline()
+{
+	if [ $# -ne 1 ]
+	then
+		echo -e "usage: removelastline [file]"
+		return
+	fi
+
+	# Don't split the below code into multiple lines
+	dd if=/dev/null of=$1 bs=1 seek=$(echo $(stat --format=%s $1) - $(tail -n1 $1 | wc -c) | bc) status=none
+}
