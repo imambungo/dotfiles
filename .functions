@@ -240,6 +240,18 @@ getlinenumber()
 	awk "/$1/{print NR; exit}" $2
 }
 
+# Source: https://stackoverflow.com/q/21600584/9157799
+deletelinenumber()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: deletelinenumber [line number] [file]"
+		return
+	fi
+
+	sed -i $1d $2
+}
+
 # Source: https://stackoverflow.com/a/27056916/9157799
 getline()
 {
@@ -263,6 +275,18 @@ removelastline()
 
 	# Don't split the below code into multiple lines
 	dd if=/dev/null of=$1 bs=1 seek=$(echo $(stat --format=%s $1) - $(tail -n1 $1 | wc -c) | bc) status=none
+}
+
+# Source: https://superuser.com/a/246841/943615
+insertlinetotop()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: insertlinetotop [string] [file]"
+		return
+	fi
+
+	sed -i "1i$1" $2
 }
 
 # view GitHub repo of current directory
