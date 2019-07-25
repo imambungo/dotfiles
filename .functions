@@ -286,7 +286,7 @@ insertlinetotop()
 		return
 	fi
 
-	sed -i "1i$1" $2
+	echo $1 | cat - $2 > temp && mv temp $2
 }
 
 # Source: https://stackoverflow.com/a/12022403/9157799
