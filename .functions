@@ -240,6 +240,18 @@ getlinenumber()
 	awk "/$1/{print NR; exit}" $2
 }
 
+# Source: https://stackoverflow.com/a/27056916/9157799
+getline()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: getline [line number] [file]"
+		return
+	fi
+
+	echo $(awk -v line=$1 'NR==line' $2)
+}
+
 # Source: https://stackoverflow.com/a/17794626/9157799
 removelastline()
 {
