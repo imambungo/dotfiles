@@ -359,6 +359,7 @@ j()
 	fi
 
 	cd "$(getline $1 ~/.jumpportals)"
+	pwd | sed "s|$HOME|~|"
 	ls
 }
 
@@ -378,7 +379,7 @@ proposejumpportal()
 	if [[ "$(lineexist "$PWD" ~/.jumpportals)" == "exist" ]]
 	then
 		deleteportal "$PWD"
-	elif [ $(numberofline ~/.jumpportals) -ge 7 ]
+	elif [ $(numberofline ~/.jumpportals) -ge 10 ]
 	then
 		removelastline ~/.jumpportals
 	fi
@@ -393,4 +394,14 @@ o()
 	fi
 
 	xdg-open "$@"
+}
+
+v()
+{
+	if [ $# -gt 0 ]
+	then
+		proposejumpportal
+	fi
+
+	vim "$@"
 }

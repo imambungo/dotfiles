@@ -46,4 +46,3 @@ alias tree3='tree -L 3'
 alias catat="vim ~/catat"
 alias gdb='gdbtui '
 alias td='termdown '
-alias v='proposejumpportal; vim '
