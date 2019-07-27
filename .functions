@@ -366,7 +366,7 @@ j()
 # Source: https://stackoverflow.com/a/5413132/9157799
 deleteportal()
 {
-	grep -v "$1" ~/.jumpportals > temp && mv temp ~/.jumpportals
+	grep -v "$1" ~/.jumpportals > temp; mv temp ~/.jumpportals
 }
 
 proposejumpportal()
