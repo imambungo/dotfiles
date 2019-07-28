@@ -31,7 +31,7 @@ dsize()
 to()
 {
 	cd "$1"
-	ls
+	ls -A
 }
 
 gcheck()
@@ -41,7 +41,7 @@ gcheck()
 
 mkcd()
 {
-	mkdir $1
+	mkdir -p $1
 	cd $1
 }
 
@@ -252,156 +252,9 @@ deletelinenumber()
 	sed -i $1d $2
 }
 
-# Source: https://stackoverflow.com/a/27056916/9157799
-getline()
-{
-	if [ $# -ne 2 ]
-	then
-		echo -e "usage: getline [line number] [file]"
-		return
-	fi
-
-	echo $(awk -v line=$1 'NR==line' $2)
-}
-
-# Source: https://stackoverflow.com/a/17794626/9157799
-removelastline()
-{
-	if [ $# -ne 1 ]
-	then
-		echo -e "usage: removelastline [file]"
-		return
-	fi
-
-	# Don't split the below code into multiple lines
-	dd if=/dev/null of=$1 bs=1 seek=$(echo $(stat --format=%s $1) - $(tail -n1 $1 | wc -c) | bc) status=none
-}
-
-# Source: https://superuser.com/a/246841/943615
-insertlinetotop()
-{
-	if [ $# -ne 2 ]
-	then
-		echo -e "usage: insertlinetotop [string] [file]"
-		return
-	fi
-
-	echo $1 | cat - $2 > temp && mv temp $2
-}
-
-# Source: https://stackoverflow.com/a/12022403/9157799
-numberofline()
-{
-	if [ $# -ne 1 ]
-	then
-		echo -e "usage: numberofline [file]"
-		return
-	fi
-
-	wc -l < $1
-}
-
 # view GitHub repo of current directory
 # Source: https://gist.github.com/igrigorik/6666860#gistcomment-2888787
 gh()
 {
 	xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)
-}
-
-getdir()
-{
-	echo $(pwd)
-}
-
-# Source: https://askubuntu.com/a/20416/356625
-# Source: https://unix.stackexchange.com/a/207213/307359
-printpathlist()
-{
-	if [ ! -f ~/.jumpportals ]
-	then
-		touch ~/.jumpportals
-	fi
-
-	sed "s|    ||g;s|$HOME|~|g" <(nl ~/.jumpportals)
-}
-
-# Source: https://stackoverflow.com/a/4749368/9157799
-lineexist()
-{
-	if [ $# -ne 2 ]
-	then
-		echo "usage: lineexist [line string] [file]"
-		return
-	fi
-
-	if grep -Fxq "$1" $2
-	then
-		echo "exist"
-	else
-		echo "notexist"
-	fi
-}
-
-j()
-{
-	if [ $# -gt 1 ]
-	then
-		echo "usage:"
-		echo "\tj [jumpportal number]"
-		echo "\tj"
-		return
-	fi
-
-	if [ $# -eq 0 ]
-	then
-		printpathlist
-		return
-	fi
-
-	cd "$(getline $1 ~/.jumpportals)"
-	pwd | sed "s|$HOME|~|"
-	ls
-}
-
-# Source: https://stackoverflow.com/a/5413132/9157799
-deleteportal()
-{
-	grep -v "$1" ~/.jumpportals > temp; mv temp ~/.jumpportals
-}
-
-proposejumpportal()
-{
-	if [[ "$PWD" == "$HOME" ]]
-	then
-		return
-	fi
-
-	if [[ "$(lineexist "$PWD" ~/.jumpportals)" == "exist" ]]
-	then
-		deleteportal "$PWD"
-	elif [ $(numberofline ~/.jumpportals) -ge 10 ]
-	then
-		removelastline ~/.jumpportals
-	fi
-	insertlinetotop "$PWD" ~/.jumpportals
-}
-
-o()
-{
-	if [ $# -eq 1 ]
-	then
-		proposejumpportal
-	fi
-
-	xdg-open "$@"
-}
-
-v()
-{
-	if [ $# -gt 0 ]
-	then
-		proposejumpportal
-	fi
-
-	vim "$@"
 }
