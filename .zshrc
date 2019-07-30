@@ -102,7 +102,7 @@ alias clear="clear;~/.vocab"
 
 source ~/.alias
 source ~/.functions
-source ~/.share
+source ~/.sharedsources
 
 fignore=(\~ class )
 
@@ -127,4 +127,3 @@ bindkey "^N" history-beginning-search-forward-end
 # added by pipx (https://github.com/pipxproject/pipx)
 export PATH="/home/imampt/.local/bin:$PATH"
 source ~/.config/up/up.sh
-source ~/.config/dirjump/dirjump

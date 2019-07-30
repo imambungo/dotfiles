@@ -125,7 +125,7 @@ alias clear="clear;~/.vocab"
 
 . ~/.alias
 . ~/.functions
-. ~/.share
+. ~/.sharedsources
 
 # untuk set tab size `cat` jadi 4
 tabs -4
@@ -134,4 +134,3 @@ export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
 source ~/.config/up/up.sh
-source ~/.config/dirjump/dirjump
