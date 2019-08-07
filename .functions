@@ -98,8 +98,9 @@ run()
 	elif [ ${1: -4} = ".cpp" ]
 	then
 		executableName=${1:0:-4} # Jika arg pertama "Main.cpp", maka executableName -> "Main"
-		echo "g++ -g -o $executableName -I$HOME/Projects/C++/testlib $@ && ./$executableName\nOutput:"
-		g++ -g -o $executableName -I$HOME/Projects/C++/testlib $@ && ./$executableName
+		run_command="g++ -g -o $executableName -I$HOME/Projects/C++/testlib $@ && ./$executableName"
+		echo "$run_command\nOutput:"
+		eval "$run_command" # https://stackoverflow.com/a/2005201/9157799
 		return
 	fi
 }
@@ -200,6 +201,17 @@ watchgdb()
 	cat /dev/null > gdb.out
 	echo "tail -f gdb.out"
 	tail -f gdb.out
+}
+
+work()
+{
+	if [ $# -ne 1 ]
+	then
+		echo "Put the number of minutes as an argument!"
+	else
+		echo "td $1m && notify-send \"$1M GOAL REACHED!\" && td"
+		td $1m && notify-send "$1M GOAL REACHED!" && td
+	fi
 }
 
 cpdiff()
