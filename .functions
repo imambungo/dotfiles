@@ -174,25 +174,48 @@ findinfiles()
 
 copy()
 {
-	if [ $1 = "" ]
+	if [ $# -eq 0 ]
 	then
 		pwd | xclip
 	else
+		numToCopy=$#
+		copyOrMove="copy"
+
 		# Source: https://stackoverflow.com/a/5265775/9157799
-		readlink -f $1 | xclip
+		readlink -f "$@" | xclip
 	fi
+}
+
+move()
+{
+	copy "$@"
+	copyOrMove="move"
 }
 
 paste()
 {
-	pathToCopy=$(xclip -o)
+	for number in {1..$numToCopy}
+	do
+		pathToCopy="$(xclip -o | head -$number | tail -1)"
 
-	if [ -d $pathToCopy ] # If it's a directory
-	then
-		cp -r $pathToCopy .
-	else
-		cp $pathToCopy .
-	fi
+		if [ -d "$pathToCopy" ] # If it's a directory
+		then
+			cp -r "$pathToCopy" .
+		else
+			cp "$pathToCopy" .
+		fi
+
+		if [ $copyOrMove = "move" ]
+		then
+			rm -rf "$pathToCopy"
+		fi
+	done
+}
+
+p()
+{
+	propose_dir_path
+	paste
 }
 
 watchgdb()
