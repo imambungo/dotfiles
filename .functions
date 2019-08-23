@@ -95,10 +95,16 @@ run()
 			echo "javac -d Classes -cp \".:Jars/*:Packages\" $1.java && java -cp \"Classes\" $1\nOutput:"
 			javac -d Classes -cp ".:Jars/*:Packages" $1.java && java -cp "Classes" $1
 		fi
-	elif [ ${1: -4} = ".cpp" ]
+	elif [ ${1: -4} = ".cpp" ] || [ ${1: -2} = ".c" ]
 	then
-		executableName=${1:0:-4} # Jika arg pertama "Main.cpp", maka executableName -> "Main"
-		run_command="g++ -g -o $executableName -I$HOME/Projects/C++/testlib $@ && ./$executableName"
+		if [ ${1: -4} = ".cpp" ]
+		then
+			executableName=${1:0:-4} # Jika arg pertama "Main.cpp", maka executableName -> "Main"
+		else
+			executableName=${1:0:-2}
+		fi
+		testlibPath=$HOME/Projects/C++/testlib
+		run_command="g++ -g -o $executableName -I$testlibPath $@ && ./$executableName"
 		echo "$run_command\nOutput:"
 		eval "$run_command" # https://stackoverflow.com/a/2005201/9157799
 		return
