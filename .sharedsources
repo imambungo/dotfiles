@@ -1,0 +1,3 @@
+#bind '"\C-p": "\C-e\C-u xsel -b <<"EOF"\n\C-y\nEOF\n\C-y"'
+source ~/.config/dirjump/dirjump
+source ~/Projects/Uncategorized/cp-organizer/teknik-terlarang/testcase-generator

@@ -299,3 +299,26 @@ gh()
 {
 	xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)
 }
+
+untar()
+{
+	if [ $# -eq 0 ] || [ $# -gt 2 ]
+	then
+		echo -e "usage: untar [tar file] [destination]"
+		return
+	fi
+
+	theCommand="tar xvf"
+	if [ ${1: -3} = ".gz" ]
+	then
+		theCommand="$theCommand""z"
+	fi
+
+	if [ $# -eq 1 ]
+	then
+		eval "$theCommand ""$1"
+	elif [ $# -eq 2 ]
+	then
+		eval "$theCommand ""$1"" -C ""$2"
+	fi
+}
