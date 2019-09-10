@@ -142,3 +142,7 @@ endfunction
 " it accepts only one argument
 " it's set to use the function above for completion
 command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
+
+" https://vi.stackexchange.com/a/105/20429
+set laststatus=2
+set statusline+=%F
