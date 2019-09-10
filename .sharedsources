@@ -1,3 +1,10 @@
 #bind '"\C-p": "\C-e\C-u xsel -b <<"EOF"\n\C-y\nEOF\n\C-y"'
 source ~/.config/dirjump/dirjump
 source ~/Projects/Uncategorized/cp-organizer/teknik-terlarang/testcase-generator
+export PATH="$PATH:$HOME/development/flutter/bin"
+
+# added by Anaconda3 installer
+export PATH="/home/imampt/anaconda3/bin:$PATH"
+
+source ~/bin/script/notify_after_command_executed/postexec_notify
+export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH

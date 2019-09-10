@@ -116,9 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# added by Anaconda3 installer
-export PATH="/home/imampt/anaconda3/bin:$PATH"
-
 chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"

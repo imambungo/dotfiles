@@ -112,10 +112,6 @@ tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
-source ~/bin/script/notify_after_command_executed/postexec_notify
-
-export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
-
 # https://superuser.com/q/583583/943615
 # https://unix.stackexchange.com/a/97844/307359
 autoload -U history-search-end
