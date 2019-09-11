@@ -322,3 +322,9 @@ untar()
 		eval "$theCommand ""$1"" -C ""$2"
 	fi
 }
+
+# Source: https://stackoverflow.com/a/965069/9157799
+getextension()
+{
+	echo "${1#*.}"
+}
