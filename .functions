@@ -343,3 +343,15 @@ calc()
 	# Source: https://stackoverflow.com/a/2043499/9157799
 	echo "print($@)" | python3
 }
+
+path()
+{
+	if [ $# -eq 0 ]
+	then
+		# show file path
+		cat ~/.path
+	else
+		# save file path
+		readlink -f "$1" > ~/.path
+	fi
+}
