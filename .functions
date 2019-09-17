@@ -178,18 +178,14 @@ findinfiles()
 	fi
 }
 
-# TODO move to a file
-numToCopy=0
-copyOrMove="copy"
-
 copy()
 {
 	if [ $# -eq 0 ]
 	then
 		pwd | xclip
 	else
-		numToCopy=$#
-		copyOrMove="copy"
+		echo $# > ~/.numToCopy
+		echo "copy" > ~/.copyOrMove
 
 		# Source: https://stackoverflow.com/a/5265775/9157799
 		readlink -f "$@" | xclip
@@ -199,12 +195,12 @@ copy()
 move()
 {
 	copy "$@"
-	copyOrMove="move"
+	echo "move" > ~/.copyOrMove
 }
 
 paste()
 {
-	for number in {1..$numToCopy}
+	for number in {1..$(cat ~/.numToCopy)}
 	do
 		pathToCopy="$(xclip -o | head -$number | tail -1)"
 
@@ -215,7 +211,7 @@ paste()
 			cp "$pathToCopy" .
 		fi
 
-		if [ $copyOrMove = "move" ]
+		if [ $(cat ~/.copyOrMove) = "move" ]
 		then
 			rm -rf "$pathToCopy"
 		fi
