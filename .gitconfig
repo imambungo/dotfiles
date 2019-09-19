@@ -1,6 +1,7 @@
 [user]
 	email = imambungo@gmail.com
 	name = M. Imam Pratama
+	signingkey = D8E53B8660A159D5
 [credential "https://github.com"]
 	username = imambungo
 [credential]
@@ -10,3 +11,5 @@
 	editor = vim
 [alias]
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
+[commit]
+	gpgsign = true
