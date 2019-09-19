@@ -298,6 +298,8 @@ deletelinenumber()
 gh()
 {
 	xdg-open https://github.$(git config remote.origin.url | cut -f2 -d.)
+	sleep 3
+	xdotool key ctrl+c
 }
 
 untar()
