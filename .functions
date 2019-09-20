@@ -30,6 +30,10 @@ dsize()
 
 to()
 {
+	if [ ! -d "$1" ]
+	then
+		1="$(dirname $1)"
+	fi
 	cd "$1"
 	ls -A
 }
