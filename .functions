@@ -361,8 +361,8 @@ path()
 
 linkpath()
 {
-	echo "ln -s \"`path`\" ."
-	ln -s "`path`" .
+	echo "ln -s \"`path`\" ./$1"
+	ln -s "`path`" ./"$1"
 }
 
 mp3()
