@@ -364,3 +364,20 @@ linkpath()
 	echo "ln -s \"`path`\" ."
 	ln -s "`path`" .
 }
+
+mp3()
+{
+	# https://askubuntu.com/a/316048/356625
+	ffplay -nodisp -autoexit "$1" 2> /dev/null
+}
+
+tts()
+{
+	query=$(echo $@ | sed -E 's/\s{1,}/\+/g')
+
+	# https://stackoverflow.com/a/10054006/9157799
+	curl -sH 'Referer: http://translate.google.com/' -H 'User-Agent: stagefright/1.2 (Linux;Android 5.0)' "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=$query" > ~/.tts.mp3
+
+	mp3 ~/.tts.mp3
+	rm ~/.tts.mp3
+}
