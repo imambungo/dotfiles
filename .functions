@@ -297,7 +297,10 @@ deletelinenumber()
 # Source: https://gist.github.com/igrigorik/6666860#gistcomment-2888787
 gh()
 {
-	google-chrome https://github.$(git config remote.origin.url | cut -f2 -d.)
+	repoURL=https://github.$(git config remote.origin.url | cut -f2 -d.)
+	branch=$(git branch | grep \* | cut -d ' ' -f2)
+	relativePath=$(git rev-parse --show-prefix)
+	google-chrome "$repoURL/tree/$branch/$relativePath$1"
 }
 
 untar()
