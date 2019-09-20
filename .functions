@@ -354,3 +354,9 @@ path()
 		readlink -f "$1" > ~/.path
 	fi
 }
+
+linkpath()
+{
+	echo "ln -s \"`path`\" ."
+	ln -s "`path`" .
+}
