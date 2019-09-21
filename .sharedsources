@@ -3,7 +3,7 @@ source ~/.alias
 source ~/.functions
 source ~/.config/dirjump/dirjump
 source ~/Projects/Uncategorized/cp-organizer/teknik-terlarang/testcase-generator
-source ~/Projects/CTF/ctf-script/shell-script
+source ~/Projects/CTF/ctf_script/shell-script
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 
@@ -12,3 +12,4 @@ export PATH="/home/imampt/anaconda3/bin:$PATH"
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
+export PYTHONSTARTUP=~/.startup.py

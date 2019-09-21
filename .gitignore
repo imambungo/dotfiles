@@ -9,3 +9,4 @@
 !.share
 !.gdbinit
 !.sharedsources
+!.startup.py
