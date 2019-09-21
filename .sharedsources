@@ -13,3 +13,4 @@ export PATH="/home/imampt/anaconda3/bin:$PATH"
 source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
 export PYTHONSTARTUP=~/.startup.py
+export PYTHONPATH=$PYTHONPATH:$HOME/Projects/CTF/ctf_script
