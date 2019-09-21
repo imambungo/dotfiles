@@ -1,7 +1,9 @@
 #bind '"\C-p": "\C-e\C-u xsel -b <<"EOF"\n\C-y\nEOF\n\C-y"'
+source ~/.alias
+source ~/.functions
 source ~/.config/dirjump/dirjump
 source ~/Projects/Uncategorized/cp-organizer/teknik-terlarang/testcase-generator
-source ~/Projects/CTF/ctf-script/ctf-script
+source ~/Projects/CTF/ctf-script/shell-script
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 
