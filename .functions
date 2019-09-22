@@ -373,8 +373,10 @@ mp3()
 
 tts()
 {
+	input="$@"
+
 	# https://stackoverflow.com/a/56321886/9157799
-	query=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$@'))")
+	query=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$input'))")
 
 	# https://stackoverflow.com/a/10054006/9157799
 	curl -sH 'Referer: http://translate.google.com/' -H 'User-Agent: stagefright/1.2 (Linux;Android 5.0)' "https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=en&q=$query" > ~/.tts.mp3
