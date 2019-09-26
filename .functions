@@ -163,12 +163,15 @@ cpac()
 	fi
 }
 
-# ! Use quotation mark if you use more than 1 word
-#	findfile 'ompetiti*gram'
-findfile()
+# Use quotation mark if you use more than 1 word:
+#	ff 'ompetiti.*gram'
+#
+# `locate` is way faster than `find`, but in rare cases, it can be innaccurate
+# as it only update the database once every day.
+ff()
 {
-	echo "find . -name \"*$1*\""
-	find . -name "*$1*"
+	echo "locate -bir \"$1\" | grep \"`pwd`\""
+	locate -bir "$1" | grep "`pwd`"
 }
 
 findinfiles()
