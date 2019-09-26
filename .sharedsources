@@ -8,7 +8,8 @@ source ~/Projects/CTF/ctf_script/shell-script
 export PATH="$PATH:$HOME/development/flutter/bin"
 
 # added by Anaconda3 installer
-export PATH="/home/imampt/anaconda3/bin:$PATH"
+# https://askubuntu.com/a/1074050/356625
+export PATH="$PATH:/home/imampt/anaconda3/bin:"
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
