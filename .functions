@@ -1,4 +1,10 @@
 #!/bin/bash
+showandrun()
+{
+	echo "Command:\n$@\n"
+	eval "$@"
+}
+
 git() {
 	if [[ "$1" == "add" ]] &&
 	   [[ "$2" == "-p" ]] || [[ "$2" == "--patch" ]]
