@@ -15,3 +15,6 @@ source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
 export PYTHONSTARTUP=~/.startup.py
 export PYTHONPATH=$PYTHONPATH:$HOME/Projects/CTF/ctf_script
+
+# https://superuser.com/a/281622/943615
+export EDITOR=vim
