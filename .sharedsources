@@ -7,6 +7,11 @@ source ~/Projects/CTF/ctf_script/shell-script
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 
+export PATH="$PATH:$HOME/Android/Sdk/tools"
+export PATH="$PATH:$HOME/Android/Sdk/tools/bin"
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+export PATH="$PATH:$HOME/Android/Sdk/build-tools"
+
 # added by Anaconda3 installer
 # https://askubuntu.com/a/1074050/356625
 export PATH="$PATH:/home/imampt/anaconda3/bin:"
