@@ -294,6 +294,11 @@ getlinenumber()
 	awk "/$1/{print NR; exit}" $2
 }
 
+get_nth_line_of_file()
+{
+	cat "$2" | head -$1 | tail -1
+}
+
 # Source: https://stackoverflow.com/q/21600584/9157799
 deletelinenumber()
 {
