@@ -14,7 +14,7 @@ export PATH="$PATH:$HOME/Android/Sdk/build-tools"
 
 # added by Anaconda3 installer
 # https://askubuntu.com/a/1074050/356625
-export PATH="$PATH:/home/imampt/anaconda3/bin:"
+export PATH="$PATH:/home/imampt/anaconda3/bin"
 
 source ~/bin/script/notify_after_command_executed/postexec_notify
 export PATH=/home/imampt/bin/clones/piano-rs/target/release:$PATH
@@ -23,3 +23,9 @@ export PYTHONPATH=$PYTHONPATH:$HOME/Projects/CTF/ctf_script
 
 # https://superuser.com/a/281622/943615
 export EDITOR=vim
+
+# https://github.com/dart-lang/dart-vim-plugin/blob/master/README.md#how-do-i-configure-an-lsp-plugin-to-start-the-analysis-server
+export DART_SDK="$HOME/development/flutter/bin/cache/dart-sdk/bin"
+
+export PATH="$PATH:$DART_SDK"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
