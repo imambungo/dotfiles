@@ -408,3 +408,9 @@ lmgt()
 	echo $url
 	echo $url | clip && echo "url copied to clipboard."
 }
+
+numberofline()
+{
+	# https://askubuntu.com/a/1173476/356625
+	grep "" -c "$@"
+}
