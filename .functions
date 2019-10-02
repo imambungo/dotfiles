@@ -399,3 +399,12 @@ tox()
 	touch "$@"
 	chmod +x "$@"
 }
+
+lmgt()
+{
+	input="$@"
+	query=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$input'))")
+	url="http://letmegooglethat.com/?q=$query"
+	echo $url
+	echo $url | clip && echo "url copied to clipboard."
+}
