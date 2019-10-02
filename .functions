@@ -419,3 +419,11 @@ numberofline()
 	# https://askubuntu.com/a/1173476/356625
 	grep "" -c "$@"
 }
+
+# clear current line and echo
+echoinplace()
+{
+	# https://unix.stackexchange.com/a/43081/307359
+	printf "\033[K"
+	echo -ne "\r$@"
+}
