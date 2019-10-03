@@ -57,8 +57,7 @@ alias upsub='git submodule update --init --recursive'
 alias prune='git remote prune origin'
 alias py='python3'
 
-# https://askubuntu.com/a/1174669/356625
-alias temp='gnome-terminal --tab --working-directory=$HOME/temp; xdotool key alt+9'
+alias temp='temp_dir' # can't create function named 'temp'
 alias bat='propose_dir_path; bat --theme OneHalfDark'
 
 # https://stackoverflow.com/a/35461434/9157799

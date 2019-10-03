@@ -427,3 +427,14 @@ echoinplace()
 	printf "\033[K"
 	echo -ne "\r$@"
 }
+
+temp_dir()
+{
+	if [ `pwd` = $HOME ]
+	then
+		cd temp
+	else
+		# https://askubuntu.com/a/1174669/356625
+		gnome-terminal --tab --working-directory=$HOME/temp; xdotool key alt+9
+	fi
+}
