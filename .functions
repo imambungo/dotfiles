@@ -438,3 +438,10 @@ temp_dir()
 		gnome-terminal --tab --working-directory=$HOME/temp; xdotool key alt+9
 	fi
 }
+
+get_nth_file()
+{
+	# get_nth_file [number] [directory]
+	# https://unix.stackexchange.com/a/33913/307359
+	ls "$2" | sort -n | head -$1 | tail -1
+}
