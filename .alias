@@ -63,3 +63,5 @@ alias bat='propose_dir_path; bat --theme OneHalfDark'
 # https://stackoverflow.com/a/35461434/9157799
 alias clip='tr -d "\n" | xclip -selection c'
 alias emu='showandrun "flutter emulators --launch flutter_emulator"'
+alias hash-id='python3 /home/imampt/Projects/CTF/hash-identifier/hash-id.py'
+alias termsistor="$HOME/Projects/Bash/termsistor/termsistor"
