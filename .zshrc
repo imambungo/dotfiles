@@ -120,7 +120,6 @@ bindkey "^N" history-beginning-search-forward-end
 
 # added by pipx (https://github.com/pipxproject/pipx)
 export PATH="/home/imampt/.local/bin:$PATH"
-source ~/.config/up/up.sh
 
 # https://stackoverflow.com/a/22945024/9157799
 alias calc='noglob calc'
