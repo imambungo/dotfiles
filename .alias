@@ -65,3 +65,6 @@ alias clip='tr -d "\n" | xclip -selection c'
 alias emu='showandrun "flutter emulators --launch flutter_emulator"'
 alias hash-id='python3 /home/imampt/Projects/CTF/hash-identifier/hash-id.py'
 alias termsystor="$HOME/Projects/Bash/termsystor/termsystor"
+
+# https://stackoverflow.com/a/50722236/9157799
+alias staged="git status --short | grep '^[MARCD]'"
