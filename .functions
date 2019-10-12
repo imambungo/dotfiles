@@ -445,3 +445,9 @@ get_nth_file()
 	# https://unix.stackexchange.com/a/33913/307359
 	ls "$2" | sort -n | head -$1 | tail -1
 }
+
+extension()
+{
+	# https://stackoverflow.com/a/965069/9157799
+	echo "${1#*.}"
+}
