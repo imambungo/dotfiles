@@ -451,3 +451,9 @@ extension()
 	# https://stackoverflow.com/a/965069/9157799
 	echo "${1#*.}"
 }
+
+delete_branch()
+{
+	echo "gp -d origin <branch_name>"
+	echo "gb -d <branch_name>"
+}
