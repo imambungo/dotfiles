@@ -44,7 +44,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=0
+
+" source: https://stackoverflow.com/a/2054782/9157799
+autocmd Filetype dart setlocal tabstop=2 shiftwidth=0 expandtab
+
 set nu rnu
 set is hls ic
 set wildignore=*.class
