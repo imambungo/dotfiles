@@ -270,6 +270,28 @@ cpdiff()
 	rm deletethis deletethistoo
 }
 
+beda()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: beda [file1] [file2]"
+		return
+	fi
+
+	gd --no-index "$1" "$2"
+}
+
+bedacol()
+{
+	if [ $# -ne 2 ]
+	then
+		echo -e "usage: bedacol [file1] [file2]"
+		return
+	fi
+
+	gdcol --no-index "$1" "$2"
+}
+
 # Source: https://stackoverflow.com/a/11145362/9157799
 replaceline()
 {

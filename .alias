@@ -68,3 +68,5 @@ alias termsystor="$HOME/Projects/Bash/termsystor/termsystor"
 
 # https://stackoverflow.com/a/50722236/9157799
 alias staged="git status --short | grep '^[MARCD]'"
+alias john=~/Projects/CTF/JohnTheRipper/run/john
+alias rsa=~/Projects/CTF/RsaCtfTool/RsaCtfTool.py
