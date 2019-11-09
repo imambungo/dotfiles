@@ -479,3 +479,43 @@ delete_branch()
 	echo "gp -d origin <branch_name>"
 	echo "gb -d <branch_name>"
 }
+
+# https://stackoverflow.com/a/12230307/9157799
+susudo ()
+{
+    local _funcname_="$1"
+
+    local params=( "$@" )             ## array containing all params passed here
+    local tmpfile="/dev/shm/$RANDOM"  ## temporary file
+    local content                     ## content of the temporary file
+    local regex                       ## regular expression
+
+    # Shift the first param (which is the name of the function)
+	# https://unix.stackexchange.com/a/68323/307359
+	params=("${params[@]:1}")     ## remove first element
+
+    content="#!/bin/bash\n\nsource $HOME/.sharedsources\n"
+
+    # Write the params array
+    content="${content}params=(\n"
+
+    regex="\s+"
+    for param in "${params[@]}"
+    do
+        if [[ "$param" =~ $regex ]]
+            then
+                content="${content}\t\"${param}\"\n"
+            else
+                content="${content}\t${param}\n"
+        fi
+    done
+
+    content="$content)\n"
+    echo -e "$content" > "$tmpfile"
+
+    # Append the call to the function
+    echo -e "\n$_funcname_ \"\${params[@]}\"\n" >> "$tmpfile"
+
+    sudo bash "$tmpfile"
+    rm "$tmpfile"
+}
