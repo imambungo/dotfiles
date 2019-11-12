@@ -167,3 +167,8 @@ let g:ale_fixers = {
 \}
 
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
+
+" https://stackoverflow.com/a/6071166/9157799
+inoremap {<cr> {<cr>}<c-o>O
+inoremap [<cr> [<cr>]<c-o>O
+inoremap (<cr> (<cr>)<c-o>O
