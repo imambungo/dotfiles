@@ -103,6 +103,10 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'drewtempelmeyer/palenight.vim'
+Plugin 'w0rp/ale'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 "Plug 'tpope/vim-sensible'
 "Plug 'junegunn/seoul256.vim'
 
@@ -128,8 +132,6 @@ au BufRead * normal zR
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-Plugin 'w0rp/ale'
-
 " MRU (Most Recently Used)
 " source: https://stackoverflow.com/a/22701319/9157799
 " this is our 'main' function: it couldn't be simpler
@@ -150,3 +152,15 @@ command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
 " https://vi.stackexchange.com/a/105/20429
 set laststatus=2
 set statusline+=%F
+
+let g:lsc_auto_map = v:true
+
+" ALE config
+let g:ale_linters = {
+\   'dart': ['language_server'],
+\}
+let g:ale_fixers = {
+\   'dart': ['dartfmt'],
+\}
+
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
