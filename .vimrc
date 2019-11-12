@@ -153,6 +153,9 @@ command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
 set laststatus=2
 set statusline+=%F
 
+" https://stackoverflow.com/a/1272247/9157799
+set fo+=t
+
 let g:lsc_auto_map = v:true
 
 " ALE config
