@@ -175,3 +175,18 @@ inoremap (<cr> (<cr>)<c-o>O
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O
+
+" https://vim.fandom.com/wiki/Moving_lines_up_or_down#Mappings_to_move_lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" https://vi.stackexchange.com/a/10506/20429
+for i in range(97,122)
+  let c = nr2char(i)
+  exec "map \e".c." <A-".c.">"
+  exec "map! \e".c." <A-".c.">"
+endfor
