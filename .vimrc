@@ -172,3 +172,6 @@ let g:lsc_server_commands = {'dart': 'dart_language_server'}
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
+
+autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
+autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O
