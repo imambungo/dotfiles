@@ -175,7 +175,7 @@ inoremap (<cr> (<cr>)<c-o>O
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
-autocmd Filetype dart nnoremap <c-w> lbi(<cr><bs><bs><bs><bs>child: <esc>f(%o),<esc>k$F)v%>k$i
+autocmd Filetype dart nnoremap <c-i> lbi(<cr><bs><bs><bs><bs>child: <esc>f(%o),<esc>k$F)v%>k$i
 
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down#Mappings_to_move_lines
 nnoremap <C-j> :m .+1<CR>==
