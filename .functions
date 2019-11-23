@@ -476,8 +476,8 @@ extension()
 
 delete_branch()
 {
-	echo "gp -d origin <branch_name>"
-	echo "gb -d <branch_name>"
+	echo "gp origin :<branch_name>"  # remote
+	echo "gb -D <branch_name>"       # local
 }
 
 # https://stackoverflow.com/a/12230307/9157799
