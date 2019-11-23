@@ -519,3 +519,12 @@ susudo ()
     sudo bash "$tmpfile"
     rm "$tmpfile"
 }
+
+replaceinfiles()
+{
+	# https://stackoverflow.com/a/21335519/9157799
+	find ./ -type f -exec sed -i "s/$1/$2/g" {} \;
+
+	# https://stackoverflow.com/a/54965955/9157799
+	echo "to fix git status:\n\trm .git/index\n\tgit reset"
+}
