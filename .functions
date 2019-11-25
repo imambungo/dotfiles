@@ -526,5 +526,10 @@ replaceinfiles()
 	find ./ -type f -exec sed -i "s/$1/$2/g" {} \;
 
 	# https://stackoverflow.com/a/54965955/9157799
-	echo "to fix git status:\n\trm .git/index\n\tgit reset"
+	if [ -f .git/index ]
+	then
+		echo ".git/index detected."
+		showandrun 'rm .git/index'
+		showandrun 'git reset'
+	fi
 }
