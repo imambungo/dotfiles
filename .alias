@@ -56,6 +56,7 @@ alias gst='git status -u '
 alias upsub='git submodule update --init --recursive'
 alias prune='git remote prune origin'
 alias grs='git restore'
+alias grss='grs --staged'
 alias py='python3'
 
 alias temp='temp_dir' # can't create function named 'temp'

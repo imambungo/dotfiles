@@ -15,3 +15,5 @@
 	gpgsign = true
 [merge]
 	ff = false
+[pull]
+	ff = true
