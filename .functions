@@ -178,6 +178,14 @@ ff()
 {
 	echo "locate -bir \"$1\" | grep \"`pwd`\""
 	locate -bir "$1" | grep "`pwd`"
+	echo "\nuse ffsafe for accurate but slower result."
+}
+
+# safer version of ff above
+ffsafe()
+{
+	echo "find . -name \"*$1*\""
+	find . -name "*$1*"
 }
 
 findinfiles()
