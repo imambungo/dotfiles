@@ -556,3 +556,8 @@ pdfextract()
 	   -sOutputFile="${3%.pdf}_p${1}-p${2}.pdf" \
 	   "${3}"
 }
+
+line()
+{
+	head -$1 | tail -1
+}
