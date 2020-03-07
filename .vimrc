@@ -184,3 +184,8 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" make < > shifts keep selection
+" https://superuser.com/a/207521/943615
+vnoremap < <gv
+vnoremap > >gv
