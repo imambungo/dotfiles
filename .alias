@@ -19,6 +19,7 @@ alias hs='history | grep'
 alias gdcol='git diff --color-words=.'
 alias gdcols='gdcol --staged'
 alias gdchar='git diff --word-diff-regex=.'
+alias gdsp='git diff --staged --color | cat' # https://stackoverflow.com/a/38271082/9157799
 alias hst='history'
 alias sglog='git log --oneline --graph --all --author-date-order'
 alias dglog='git log --graph --pretty=format:"%C(bold blue)%s%C(auto)%d%n%C(yellow)%h%Creset %an, %C(magenta)%ar%Creset at %C(cyan)%ad%n%b" --date=format:"%H:%M"' 
@@ -75,3 +76,10 @@ alias john=~/Projects/CTF/JohnTheRipper/run/john
 alias rsa=~/Projects/CTF/RsaCtfTool/RsaCtfTool.py
 
 alias weka='java -jar /home/imampt/Documents/Kuliah/AI/weka-3-8-3/weka.jar'
+
+# tmux
+alias tl='tmux ls'               # LIST all session
+alias tk='tmux kill-session -t'  # KILL a session
+alias tkt='tmux kill-session'    # kill THIS session
+alias tke='tmux kill-session -a' # kill everything ELSE
+alias tka='tke && tkt'           # the true kill ALL
