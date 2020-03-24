@@ -123,3 +123,5 @@ export PATH="/home/imampt/.local/bin:$PATH"
 
 # https://stackoverflow.com/a/22945024/9157799
 alias calc='noglob calc'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

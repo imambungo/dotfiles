@@ -10,3 +10,5 @@
 !.gdbinit
 !.sharedsources
 !.startup.py
+!.tmux.conf
+!.fzfrc

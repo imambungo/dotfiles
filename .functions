@@ -185,7 +185,7 @@ ff()
 ffsafe()
 {
 	echo "find . -name \"*$1*\""
-	find . -name "*$1*"
+	find . -name "*$1*" | grep "$1"
 }
 
 findinfiles()
@@ -557,7 +557,27 @@ pdfextract()
 	   "${3}"
 }
 
+flutter_create()
+{
+	echo 'flutter create --org com.yourdomain appname'
+}
+
 line()
 {
 	head -$1 | tail -1
+}
+
+# https://gist.github.com/junegunn/f4fca918e937e6bf5bad#gistcomment-2731105
+# my git log
+mgl ()
+{
+	ggloga --color=always | \
+	    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
+			'source ~/.alias; f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f \
+			"$(ggloga | head -$(({n} + 2)) | tail -2)"' \
+			--bind 'alt-j:down,alt-k:up,ctrl-j:preview-page-down,ctrl-k:preview-page-up,ctrl-m:execute: \
+			(git log --graph --pretty=format:"%C(bold blue)%s%C(auto)%d%n%C(yellow)%h%Creset %an, %C(magenta)%ar%Creset at %C(cyan)%ad%n%b" --date=format:"%H:%M" --author-date-order --all | head -$(({n} +2)) | tail -2 | grep -o "[a-f0-9]\{7\}" | head -1 |
+			 xargs -I % sh -c "git show --color=always % | less -R") << "FZF-EOF"
+			 {}
+FZF-EOF' --preview-window=right:65%
 }

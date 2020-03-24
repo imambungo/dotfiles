@@ -7,6 +7,7 @@ source ~/Projects/CTF/ctf_script/shell-script
 source ~/bin/script/notify_after_command_executed/postexec_notify
 source ~/.config/up/up.sh
 source ~/Projects/Uncategorized/tangkapan/script
+source ~/.fzfrc
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 

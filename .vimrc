@@ -47,7 +47,7 @@ set tabstop=4
 set shiftwidth=0
 
 " source: https://stackoverflow.com/a/2054782/9157799
-autocmd Filetype dart setlocal tabstop=2 shiftwidth=0 expandtab
+autocmd Filetype dart,html setlocal tabstop=2 shiftwidth=0 expandtab
 
 set nu rnu
 set is hls ic
@@ -184,6 +184,8 @@ inoremap <C-j> <Esc>:m .+1<CR>==gi
 inoremap <C-k> <Esc>:m .-2<CR>==gi
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+set rtp+=/home/imampt/.linuxbrew/opt/fzf
 
 " make < > shifts keep selection
 " https://superuser.com/a/207521/943615
