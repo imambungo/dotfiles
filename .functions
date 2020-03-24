@@ -569,7 +569,7 @@ line()
 
 # https://gist.github.com/junegunn/f4fca918e937e6bf5bad#gistcomment-2731105
 # my git log
-mgl ()
+mgl()
 {
 	ggloga --color=always | \
 	    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
@@ -579,5 +579,27 @@ mgl ()
 			(git log --graph --pretty=format:"%C(bold blue)%s%C(auto)%d%n%C(yellow)%h%Creset %an, %C(magenta)%ar%Creset at %C(cyan)%ad%n%b" --date=format:"%H:%M" --author-date-order --all | head -$(({n} +2)) | tail -2 | grep -o "[a-f0-9]\{7\}" | head -1 |
 			 xargs -I % sh -c "git show --color=always % | less -R") << "FZF-EOF"
 			 {}
-FZF-EOF' --preview-window=right:65%
+FZF-EOF' --preview-window=right:60%
+}
+
+# fzf, but the output are copied to the clipboard
+f()
+{
+	# https://stackoverflow.com/a/46726373/9157799
+	if [ -p /dev/stdin ]
+	then
+		stdin=$(</dev/stdin)
+
+		# hack
+		# fzo=$(echo "$stdin" | fzf "$@")    harusnya ini bisa
+		echo "$stdin" | fzf "$@" | xclip
+		fzo="$(xclip -o)"
+	else
+		fzo=$(fzf "$@")
+	fi
+	if [ "$fzo" != "" ]
+	then
+		echo -n "$fzo" | xclip -se c
+		echo "$fzo"
+	fi
 }
