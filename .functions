@@ -575,7 +575,7 @@ mgl()
 	    fzf --ansi --no-sort --reverse --tiebreak=index --preview \
 			'source ~/.alias; f() { set -- $(echo -- "$@" | grep -o "[a-f0-9]\{7\}"); [ $# -eq 0 ] || git show --color=always $1 ; }; f \
 			"$(ggloga | head -$(({n} + 2)) | tail -2)"' \
-			--bind 'alt-j:down,alt-k:up,ctrl-j:preview-page-down,ctrl-k:preview-page-up,ctrl-m:execute: \
+			--bind 'ctrl-j:preview-down,ctrl-k:preview-up,alt-j:preview-page-down,alt-k:preview-page-up,ctrl-m:execute: \
 			(git log --graph --pretty=format:"%C(bold blue)%s%C(auto)%d%n%C(yellow)%h%Creset %an, %C(magenta)%ar%Creset at %C(cyan)%ad%n%b" --date=format:"%H:%M" --author-date-order --all | head -$(({n} +2)) | tail -2 | grep -o "[a-f0-9]\{7\}" | head -1 |
 			 xargs -I % sh -c "git show --color=always % | less -R") << "FZF-EOF"
 			 {}

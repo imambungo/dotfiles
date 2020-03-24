@@ -76,6 +76,7 @@ alias john=~/Projects/CTF/JohnTheRipper/run/john
 alias rsa=~/Projects/CTF/RsaCtfTool/RsaCtfTool.py
 
 alias weka='java -jar /home/imampt/Documents/Kuliah/AI/weka-3-8-3/weka.jar'
+alias tod='to "/media/imampt/Win D"'
 
 # tmux
 alias tl='tmux ls'               # LIST all session

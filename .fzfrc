@@ -11,3 +11,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --preview-window=right:70%:wrap
 --reverse
 '
+
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--bind "ctrl-v:toggle-preview,ctrl-j:preview-down,ctrl-k:preview-up,alt-j:preview-page-down,alt-k:preview-page-up,ctrl-e:execute(vim {})"
+'
