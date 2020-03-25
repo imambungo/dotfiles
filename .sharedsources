@@ -8,6 +8,8 @@ source ~/bin/script/notify_after_command_executed/postexec_notify
 source ~/.config/up/up.sh
 source ~/Projects/Uncategorized/tangkapan/script
 source ~/.fzfrc
+source ~/ch/script
+eval $(thefuck --alias)
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 
@@ -32,3 +34,5 @@ export DART_SDK="$HOME/development/flutter/bin/cache/dart-sdk/bin"
 
 export PATH="$PATH:$DART_SDK"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export BROWSER=w3m

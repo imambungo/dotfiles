@@ -34,13 +34,20 @@ dsize()
 	du -ah --max-depth=1 | sort -hr
 }
 
+# same as cd, except:
+# - no need to wrap path containing spaces with quote.
+# - if the argument is a file, cd to the directory containing that file.
+# - after the directory changed, list all directories and files.
 to()
 {
-	if [ ! -d "$1" ]
+	local arg="$@"
+	if [ ! -d "$arg" ]
 	then
-		1="$(dirname $1)"
+		local dir="$(dirname "$arg")"
+	else
+		local dir="$arg"
 	fi
-	cd "$1"
+	cd "$dir"
 	ls -A
 }
 
