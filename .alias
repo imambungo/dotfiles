@@ -84,3 +84,6 @@ alias tk='tmux kill-session -t'  # KILL a session
 alias tkt='tmux kill-session'    # kill THIS session
 alias tke='tmux kill-session -a' # kill everything ELSE
 alias tka='tke && tkt'           # the true kill ALL
+
+# https://github.com/chubin/cheat.sh#installation
+alias cht='cht.sh'

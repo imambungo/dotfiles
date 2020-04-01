@@ -35,7 +35,7 @@ dsize()
 }
 
 # same as cd, except:
-# - no need to wrap path containing spaces with quote.
+# - no need to wrap path containing spaces with quotes.
 # - if the argument is a file, cd to the directory containing that file.
 # - after the directory changed, list all directories and files.
 to()
