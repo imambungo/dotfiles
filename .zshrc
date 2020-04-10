@@ -100,8 +100,6 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
-source ~/.sharedsources
-
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
@@ -121,7 +119,9 @@ bindkey "^N" history-beginning-search-forward-end
 # added by pipx (https://github.com/pipxproject/pipx)
 export PATH="/home/imampt/.local/bin:$PATH"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# should be last (because of .tmux-loader.sh)
+source ~/.sharedsources
 # https://stackoverflow.com/a/22945024/9157799
 alias calc='noglob calc'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

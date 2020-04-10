@@ -13,5 +13,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 '
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+--cycle
 --bind "ctrl-v:toggle-preview,ctrl-j:preview-down,ctrl-k:preview-up,alt-j:preview-page-down,alt-k:preview-page-up,ctrl-e:execute(echo '' | xargs -o vim '{}' >/dev/tty)"
 '

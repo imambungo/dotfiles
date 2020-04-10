@@ -120,11 +120,12 @@ chmod +x ~/.vocab
 ~/.vocab
 alias clear="clear;~/.vocab"
 
-. ~/.sharedsources
-
 # untuk set tab size `cat` jadi 4
 tabs -4
 
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# should be last
+. ~/.sharedsources

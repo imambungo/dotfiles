@@ -11,4 +11,5 @@
 !.sharedsources
 !.startup.py
 !.tmux.conf
-!.fzfrc
+!.fzfrc.sh
+!.tmux-loader.sh
