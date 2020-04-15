@@ -192,3 +192,7 @@ set rtp+=/home/imampt/.linuxbrew/opt/fzf
 " https://superuser.com/a/207521/943615
 vnoremap < <gv
 vnoremap > >gv
+
+" temporary `gx` fix
+" https://github.com/vim/vim/issues/4738#issuecomment-521506447
+nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
