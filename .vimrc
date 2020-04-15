@@ -47,7 +47,8 @@ set tabstop=4
 set shiftwidth=0
 
 " source: https://stackoverflow.com/a/2054782/9157799
-autocmd Filetype dart,html setlocal tabstop=2 shiftwidth=0 expandtab
+" check the filetype with  :set ft?
+autocmd Filetype dart,html,javascript setlocal tabstop=2 expandtab
 
 set nu rnu
 set is hls ic
