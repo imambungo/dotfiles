@@ -192,10 +192,11 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 set rtp+=/home/imampt/.linuxbrew/opt/fzf
 
-" make < > shifts keep selection
-" https://superuser.com/a/207521/943615
-vnoremap < <gv
-vnoremap > >gv
+" https://vi.stackexchange.com/a/24624/20429
+nnoremap >> 0i<tab><esc>^
+nnoremap << :norm 0ldF<tab><enter>^
+vnoremap > :norm 0i<tab><enter>gv
+vnoremap < :norm 0ldF<tab><enter>gv
 
 " temporary `gx` fix
 " https://github.com/vim/vim/issues/4738#issuecomment-521506447
