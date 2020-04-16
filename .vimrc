@@ -48,7 +48,8 @@ set shiftwidth=0
 
 " source: https://stackoverflow.com/a/2054782/9157799
 " check the filetype with  :set ft?
-autocmd Filetype dart,html,javascript setlocal tabstop=2 expandtab
+autocmd Filetype dart,html setlocal tabstop=2
+autocmd Filetype javascript setlocal tabstop=3
 
 set nu rnu
 set is hls ic
