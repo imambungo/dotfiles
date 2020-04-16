@@ -127,11 +127,14 @@ hi ColorColumn ctermbg=239
 "highlight Identifier ctermfg=99AA00
 
 set foldmethod=indent
-"au BufRead source: https://stackoverflow.com/a/8316817/9157799
+" au BufRead source: https://stackoverflow.com/a/8316817/9157799
 au BufRead * normal zR
-"below: save fold state
+" below: save fold state
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
+" below: don't save the options
+" https://vi.stackexchange.com/q/24602/20429
+set viewoptions-=options
 
 " MRU (Most Recently Used)
 " source: https://stackoverflow.com/a/22701319/9157799
