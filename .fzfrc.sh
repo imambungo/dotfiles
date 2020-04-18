@@ -7,7 +7,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 # require: bat
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
---preview="bat -p --color=always --theme OneHalfDark {} | head -100"
+--preview="bat -p --color=always --tabs 3 --theme OneHalfDark {} | head -100"
 --preview-window=right:70%:wrap
 --reverse
 '
