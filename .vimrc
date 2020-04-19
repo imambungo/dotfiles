@@ -201,3 +201,8 @@ vnoremap < :norm 0ldF<tab><enter>gv
 " temporary `gx` fix
 " https://github.com/vim/vim/issues/4738#issuecomment-521506447
 nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
+
+" move the cursor through long soft-wrapped lines
+" https://stackoverflow.com/a/21000307/9157799
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
