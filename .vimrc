@@ -178,6 +178,10 @@ inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 
+inoremap { {}<left>
+inoremap [ []<left>
+inoremap ( ()<left>
+
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
 autocmd Filetype dart nnoremap <c-i> lbi(<cr><bs><bs><bs><bs>child: <esc>f(%o),<esc>k$F)v%>k$i
@@ -204,5 +208,5 @@ nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
 
 " move the cursor through long soft-wrapped lines
 " https://stackoverflow.com/a/21000307/9157799
-nnoremap <expr> j v:count ? 'j' : 'gj'
-nnoremap <expr> k v:count ? 'k' : 'gk'
+noremap <expr> j v:count ? 'j' : 'gj'
+noremap <expr> k v:count ? 'k' : 'gk'
