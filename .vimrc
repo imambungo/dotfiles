@@ -189,7 +189,11 @@ inoremap [] []
 inoremap {} {}
 
 " ctrl-L for right arrow key in insert mode
+" useful to get past through closing parens
 inoremap <c-l> <right>
+
+" to prevent auto closing parens when pasting
+inoremap <c-v> i<c-o>vp
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
@@ -205,6 +209,7 @@ vnoremap <C-k> :m '<-2<CR>gv=gv
 
 set rtp+=/home/imampt/.linuxbrew/opt/fzf
 
+" don't touch the spaces when shifting
 " https://vi.stackexchange.com/a/24624/20429
 nnoremap >> 0i<tab><esc>^
 nnoremap << :norm 0ldF<tab><enter>^
