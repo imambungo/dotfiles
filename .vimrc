@@ -178,9 +178,18 @@ inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
 inoremap (<cr> (<cr>)<c-o>O
 
+" auto closing bracket
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap ( ()<left>
+
+" no auto closing bracket if empty
+inoremap () ()
+inoremap [] []
+inoremap {} {}
+
+" ctrl-L for right arrow key in insert mode
+inoremap <c-l> <right>
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
