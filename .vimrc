@@ -48,8 +48,14 @@ set shiftwidth=0
 
 " source: https://stackoverflow.com/a/2054782/9157799
 " check the filetype with  :set ft?
-autocmd Filetype dart,html setlocal tabstop=2
-autocmd Filetype javascript setlocal tabstop=3
+autocmd Filetype json setlocal tabstop=2 expandtab
+autocmd Filetype javascript,dart,html call SetTabSettings()
+
+" https://stackoverflow.com/a/1413352/9157799
+function SetTabSettings()
+	setlocal tabstop=3
+	call SetTabShifting()
+endfunction
 
 set nu rnu
 set is hls ic
@@ -211,10 +217,12 @@ set rtp+=/home/imampt/.linuxbrew/opt/fzf
 
 " don't touch the spaces when shifting
 " https://vi.stackexchange.com/a/24624/20429
-nnoremap >> 0i<tab><esc>^
-nnoremap << :norm 0ldF<tab><enter>^
-vnoremap > :norm 0i<tab><enter>gv
-vnoremap < :norm 0ldF<tab><enter>gv
+function SetTabShifting()
+	nnoremap >> 0i<tab><esc>^
+	nnoremap << :norm 0ldF<tab><enter>^
+	vnoremap > :norm 0i<tab><enter>gv
+	vnoremap < :norm 0ldF<tab><enter>gv
+endfunction
 
 " temporary `gx` fix
 " https://github.com/vim/vim/issues/4738#issuecomment-521506447
