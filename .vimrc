@@ -156,7 +156,7 @@ command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
 
 " https://vi.stackexchange.com/a/105/20429
 set laststatus=2
-set statusline+=%F
+set statusline+=%F\ %y
 
 " https://stackoverflow.com/a/1272247/9157799
 set fo+=t
