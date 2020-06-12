@@ -58,8 +58,14 @@ gcheck()
 
 mkcd()
 {
-	mkdir -p $1
+	if [ -d $1 ]
+	then
+		echo $1 directory already exists, changing directory to it.
+	else
+		mkdir -p $1
+	fi
 	cd $1
+	l
 }
 
 cpcontent()

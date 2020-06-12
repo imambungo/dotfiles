@@ -194,6 +194,8 @@ inoremap () ()
 inoremap [] []
 inoremap {} {}
 
+inoremap (<esc> (<esc>
+
 " ctrl-L for right arrow key in insert mode
 " useful to get past through closing parens
 inoremap <c-l> <right>
