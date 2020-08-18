@@ -234,3 +234,31 @@ nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
 " https://stackoverflow.com/a/21000307/9157799
 noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
+
+" exit insert mode by pressing j and k together
+inoremap jk <esc>
+inoremap kj <esc>
+inoremap df <esc>
+inoremap fd <esc>
+
+" https://stackoverflow.com/a/6528201/9157799
+" w     : forward to next word beginning with alphanumeric char
+" b     : backward to prev word beginning with alphanumeric char
+" <c-h> : back to prev word ending with alphanumeric char
+function! <SID>GotoPattern(pattern, dir) range
+    let g:_saved_search_reg = @/
+    let l:flags = "We"
+    if a:dir == "b"
+        let l:flags .= "b"
+    endif
+    for i in range(v:count1)
+        call search(a:pattern, l:flags)
+    endfor
+    let @/ = g:_saved_search_reg
+endfunction
+nnoremap <silent> w :<C-U>call <SID>GotoPattern('\(^\\|\<\)[A-Za-z0-9_]', 'f')<CR>
+vnoremap <silent> w :<C-U>let g:_saved_search_reg=@/<CR>gv/\(^\\|\<\)[A-Za-z0-9_]<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
+nnoremap <silent> b :<C-U>call <SID>GotoPattern('\(^\\|\<\)[A-Za-z0-9_]', 'b')<CR>
+vnoremap <silent> b :<C-U>let g:_saved_search_reg=@/<CR>gv?\(^\\|\<\)[A-Za-z0-9_]<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
+nnoremap <silent> <c-h> :call <SID>GotoPattern('[A-Za-z0-9_]\(\>\\|$\)', 'b')<CR>
+vnoremap <silent> <c-h> :<C-U>let g:_saved_search_reg=@/<CR>gv?[A-Za-z0-9_]\(\>\\|$\)<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
