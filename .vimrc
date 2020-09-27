@@ -239,7 +239,6 @@ noremap <expr> k v:count ? 'k' : 'gk'
 inoremap jk <esc>
 inoremap kj <esc>
 inoremap df <esc>
-inoremap fd <esc>
 
 " https://stackoverflow.com/a/6528201/9157799
 " w     : forward to next word beginning with alphanumeric char
@@ -262,3 +261,5 @@ nnoremap <silent> b :<C-U>call <SID>GotoPattern('\(^\\|\<\)[A-Za-z0-9_]', 'b')<C
 vnoremap <silent> b :<C-U>let g:_saved_search_reg=@/<CR>gv?\(^\\|\<\)[A-Za-z0-9_]<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
 nnoremap <silent> <c-h> :call <SID>GotoPattern('[A-Za-z0-9_]\(\>\\|$\)', 'b')<CR>
 vnoremap <silent> <c-h> :<C-U>let g:_saved_search_reg=@/<CR>gv?[A-Za-z0-9_]\(\>\\|$\)<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
+
+nnoremap ; :
