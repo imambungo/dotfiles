@@ -263,3 +263,6 @@ nnoremap <silent> <c-h> :call <SID>GotoPattern('[A-Za-z0-9_]\(\>\\|$\)', 'b')<CR
 vnoremap <silent> <c-h> :<C-U>let g:_saved_search_reg=@/<CR>gv?[A-Za-z0-9_]\(\>\\|$\)<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
 
 nnoremap ; :
+
+" syntax highlighting for svelte files
+au! BufNewFile,BufRead *.svelte set ft=html
