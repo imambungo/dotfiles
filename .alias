@@ -63,7 +63,7 @@ alias grss='grs --staged'
 alias py='python3'
 
 alias temp='temp_dir' # can't create function named 'temp'
-alias bat='propose_dir_path; bat --tabs 3 --theme OneHalfDark'
+alias bat='propose_dir_path; bat --tabs 3 --theme OneHalfDark --map-syntax svelte:html'
 
 # https://stackoverflow.com/a/35461434/9157799
 alias clip='tr -d "\n" | xclip -selection c'
