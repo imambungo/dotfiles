@@ -88,3 +88,10 @@ alias tka='tke && tkt'           # the true kill ALL
 
 # https://github.com/chubin/cheat.sh#installation
 alias cht='cht.sh'
+
+alias r='ranger'
+
+# see alias: ~/.gitconfig
+alias root='cd `git root`'
+alias t='to `git root`/`git find`'
+alias e='temp_location=`git root`/`git find`; to $temp_location; v $temp_location'
