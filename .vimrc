@@ -232,6 +232,7 @@ noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
 
 inoremap <C-l> <esc>
+vnoremap <C-l> <esc>
 
 " https://stackoverflow.com/a/6528201/9157799
 " w     : forward to next word beginning with alphanumeric char
