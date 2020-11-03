@@ -266,3 +266,10 @@ au! BufNewFile,BufRead *.svelte set ft=html
 " https://stackoverflow.com/a/12154601/9157799
 set tags+=~/.local/lib/python3.6/site-packages/tags
 set tags+=~/.local/lib/python2.7/site-packages/tags
+
+" https://stackoverflow.com/a/19757493/9157799
+" https://stackoverflow.com/a/2517412/9157799
+" https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
+" :h exe
+command! MyGitBlame exe '!git log -L' line("'<").','.line("'>").':'.expand('%:t')
+noremap <c-b> :<c-u>MyGitBlame<cr>
