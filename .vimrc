@@ -65,8 +65,8 @@ set colorcolumn=80
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-"Clear highlight on pressing double ESC
-nnoremap <esc><esc> :noh<return>
+"Clear highlight on pressing 'ESC'
+nnoremap <c-l> :noh<return>
 
 "vnoremap <C-C> :w !xclip -i -sel c<CR><CR>
 "vnoremap y :w !xclip -i -sel c<CR><CR>
@@ -196,10 +196,6 @@ inoremap {} {}
 
 inoremap (<esc> (<esc>
 
-" ctrl-L for right arrow key in insert mode
-" useful to get past through closing parens
-inoremap <c-l> <right>
-
 " to prevent auto closing parens when pasting
 inoremap <c-v> i<c-o>vp
 
@@ -235,10 +231,7 @@ nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
 noremap <expr> j v:count ? 'j' : 'gj'
 noremap <expr> k v:count ? 'k' : 'gk'
 
-" exit insert mode by pressing j and k together
-inoremap jk <esc>
-inoremap kj <esc>
-inoremap df <esc>
+inoremap <C-l> <esc>
 
 " https://stackoverflow.com/a/6528201/9157799
 " w     : forward to next word beginning with alphanumeric char
@@ -263,6 +256,7 @@ nnoremap <silent> <c-h> :call <SID>GotoPattern('[A-Za-z0-9_]\(\>\\|$\)', 'b')<CR
 vnoremap <silent> <c-h> :<C-U>let g:_saved_search_reg=@/<CR>gv?[A-Za-z0-9_]\(\>\\|$\)<CR>:<C-U>let @/=g:_saved_search_reg<CR>gv
 
 nnoremap ; :
+nnoremap : ;
 
 " syntax highlighting for svelte files
 au! BufNewFile,BufRead *.svelte set ft=html
