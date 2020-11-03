@@ -260,3 +260,8 @@ nnoremap : ;
 
 " syntax highlighting for svelte files
 au! BufNewFile,BufRead *.svelte set ft=html
+
+" https://vi.stackexchange.com/a/19463/20429
+" https://stackoverflow.com/a/12154601/9157799
+set tags+=~/.local/lib/python3.6/site-packages/tags
+set tags+=~/.local/lib/python2.7/site-packages/tags
