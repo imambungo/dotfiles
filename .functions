@@ -219,11 +219,11 @@ copy()
 		pwd | xclip
 	else
 		echo $# > ~/.numToCopy
-		echo "copy" > ~/.copyOrMove
 
 		# Source: https://stackoverflow.com/a/5265775/9157799
 		readlink -f "$@" | xclip
 	fi
+	echo "copy" > ~/.copyOrMove
 }
 
 move()
