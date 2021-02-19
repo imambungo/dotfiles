@@ -116,10 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-chmod +x ~/.vocab
-~/.vocab
-alias clear="clear;~/.vocab"
-
 # untuk set tab size `cat` jadi 4
 tabs -4
 

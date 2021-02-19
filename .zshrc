@@ -96,10 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-chmod +x ~/.vocab
-~/.vocab
-alias clear="clear;~/.vocab"
-
 fignore=(\~ class )
 
 # untuk set tab size `cat` jadi 4
