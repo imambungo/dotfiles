@@ -186,6 +186,22 @@ for i in range(97,122)
   exe "set <m-".c.">=\e".c
 endfor
 
+" command mode
+cnoremap <c-u> <c-e><c-u>
+cnoremap <m-f> <s-right>
+cnoremap <m-b> <s-left>
+
+" insert + command mode
+noremap! <c-d> <del>
+noremap! <c-a> <home>
+noremap! <c-f> <right>
+noremap! <c-b> <left>
+
+" insert mode
+imap <m-f> <c-o>w
+imap <m-b> <c-o>b
+inoremap <c-e> <end>
+
 " https://stackoverflow.com/a/6071166/9157799
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
