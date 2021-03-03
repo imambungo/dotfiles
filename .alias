@@ -1,5 +1,6 @@
 #pake `type namaalias` untuk ngecek apakah namaalias sudah terpakai
 
+alias dotfiles="to ~/.dotfiles"
 alias lc="colorls"
 alias hackmode="cd ~/cool-retro-term && ./cool-retro-term"
 

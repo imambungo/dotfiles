@@ -596,6 +596,7 @@ FZF-EOF' --preview-window=right:60%
 }
 
 # fzf, but the output are copied to the clipboard
+# note: ch depend on this
 f()
 {
 	# https://stackoverflow.com/a/46726373/9157799

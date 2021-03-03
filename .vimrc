@@ -273,3 +273,6 @@ set tags+=~/.local/lib/python2.7/site-packages/tags
 " :h exe
 command! MyGitBlame exe '!git log -L' line("'<").','.line("'>").':'.expand('%:t')
 noremap <c-b> :<c-u>MyGitBlame<cr>
+
+" allow switching from terminal or modified file buffer
+set hidden
