@@ -179,6 +179,13 @@ let g:ale_fixers = {
 
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
+" fix: Alt key mappings doesn't work
+" https://vi.stackexchange.com/a/10506/20429
+for i in range(97,122)
+  let c = nr2char(i)
+  exe "set <m-".c.">=\e".c
+endfor
+
 " https://stackoverflow.com/a/6071166/9157799
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
