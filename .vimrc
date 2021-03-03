@@ -234,6 +234,13 @@ noremap <expr> k v:count ? 'k' : 'gk'
 inoremap <C-l> <esc>
 vnoremap <C-l> <esc>
 
+" switch buffer to terminal
+" :ter[minal]  -->  open terminal in NEW window
+nnoremap <c-s> :ter ++curwin<cr>
+
+" https://stackoverflow.com/a/61996363/9157799
+tnoremap <c-[> <c-\><c-n>
+
 " https://stackoverflow.com/a/6528201/9157799
 " w     : forward to next word beginning with alphanumeric char
 " b     : backward to prev word beginning with alphanumeric char
