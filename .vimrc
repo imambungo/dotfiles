@@ -196,8 +196,12 @@ inoremap {} {}
 
 inoremap (<esc> (<esc>
 
+" strange behavior: malah nge-enable paste pake ctrl-v
+"                   ctrl-shift-v dk ad perubahan
+" diagnosa: shift doesn't work
+" ternyata: https://vi.stackexchange.com/a/4291/20429
 " to prevent auto closing parens when pasting
-inoremap <c-v> i<c-o>vp
+inoremap <c-s-v> <c-o>p
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
 autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
