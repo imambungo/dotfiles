@@ -230,7 +230,7 @@ inoremap (<esc> (<esc>
 inoremap <c-s-v> <c-o>p
 
 autocmd Filetype dart inoremap [<cr> [<cr>],<c-o>O<tab>
-autocmd Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
+au Filetype dart inoremap (<cr> (<cr>),<c-o>O<bs><bs>
 autocmd Filetype dart nnoremap <c-i> lbi(<cr><bs><bs><bs><bs>child: <esc>f(%o),<esc>k$F)v%>k$i
 
 " https://vim.fandom.com/wiki/Moving_lines_up_or_down#Mappings_to_move_lines
@@ -301,8 +301,8 @@ au! BufNewFile,BufRead *.svelte set ft=html
 
 " https://vi.stackexchange.com/a/19463/20429
 " https://stackoverflow.com/a/12154601/9157799
-set tags+=~/.local/lib/python3.6/site-packages/tags
-set tags+=~/.local/lib/python2.7/site-packages/tags
+au FileType python set tags+=~/.local/lib/python3.6/site-packages/tags
+au FileType python set tags+=~/.local/lib/python2.7/site-packages/tags
 
 " https://stackoverflow.com/a/19757493/9157799
 " https://stackoverflow.com/a/2517412/9157799
