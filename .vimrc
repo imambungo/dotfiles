@@ -299,6 +299,9 @@ nnoremap : ;
 " syntax highlighting for svelte files
 au! BufNewFile,BufRead *.svelte set ft=html
 
+set tags+=./tags;  " don't forget to install universal-ctags
+" https://stackoverflow.com/a/741486/9157799
+
 " https://vi.stackexchange.com/a/19463/20429
 " https://stackoverflow.com/a/12154601/9157799
 au FileType python set tags+=~/.local/lib/python3.6/site-packages/tags
