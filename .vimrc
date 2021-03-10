@@ -303,7 +303,11 @@ au! BufNewFile,BufRead *.svelte set ft=html
 " https://stackoverflow.com/a/12154601/9157799
 au FileType python set tags+=~/.local/lib/python3.6/site-packages/tags
 au FileType python set tags+=~/.local/lib/python2.7/site-packages/tags
+" to toggle: https://stackoverflow.com/a/43125342/9157799
 
+" TODO: give correct result when there are uncommitted changes
+" TODO: show all changes of the commits instead of just the highlighted one
+" TODO: ctrl-b without highlighting
 " https://stackoverflow.com/a/19757493/9157799
 " https://stackoverflow.com/a/2517412/9157799
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
