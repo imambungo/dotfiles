@@ -202,9 +202,6 @@ imap <m-f> <c-o>w
 imap <m-b> <c-o>b
 inoremap <c-e> <end>
 
-" useful to get past closing brackets
-inoremap <c-i> <right><right>
-
 " https://stackoverflow.com/a/6071166/9157799
 inoremap {<cr> {<cr>}<c-o>O
 inoremap [<cr> [<cr>]<c-o>O
