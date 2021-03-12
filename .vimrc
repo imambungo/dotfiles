@@ -249,9 +249,19 @@ function SetTabShifting()
 	vnoremap < :norm 0ldF<tab><enter>gv
 endfunction
 
-" temporary `gx` fix
-" https://github.com/vim/vim/issues/4738#issuecomment-521506447
-nmap gx yiW:!xdg-open <cWORD><CR> <C-r>" & <CR><CR>
+" Temporary `gx` fix
+" note: - unlike google-chrome, xdg-open need https:// to be in the URL
+"       - if the default browser is chrome, xdg-open will print "Opening in
+"         existing browser session"
+" https://github.com/vim/vim/issues/4738
+nnoremap gx :sil !xdg-open <cWORD> > /dev/null<cr>:redr!<cr>
+" sil[ent] --> obliterate "Press ENTER or type command to continue" from shell
+"
+" redr[aw]! --> redraw vim screen after m̶e̶s̶s̶e̶d̶ ̶u̶p̶ silenced by sil[ent]
+"
+" > /dev/null (default to 1> /dev/null) --> because we use sil[ent], the
+" "Opening in existing browser session" get escaped to vim screen, and
+" redr[aw]! can't prevent it
 
 " move the cursor through long soft-wrapped lines
 " https://stackoverflow.com/a/21000307/9157799
