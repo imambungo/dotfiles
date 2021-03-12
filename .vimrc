@@ -254,7 +254,7 @@ endfunction
 "       - if the default browser is chrome, xdg-open will print "Opening in
 "         existing browser session"
 " https://github.com/vim/vim/issues/4738
-nnoremap gx :sil !xdg-open <cWORD> > /dev/null<cr>:redr!<cr>
+nnoremap gx :sil !xdg-open '<cWORD>' > /dev/null<cr>:redr!<cr>
 " sil[ent] --> obliterate "Press ENTER or type command to continue" from shell
 "
 " redr[aw]! --> redraw vim screen after m̶e̶s̶s̶e̶d̶ ̶u̶p̶ silenced by sil[ent]
