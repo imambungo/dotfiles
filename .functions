@@ -355,10 +355,10 @@ deletelinenumber()
 }
 
 # view GitHub repo of current directory
-# Source: https://gist.github.com/igrigorik/6666860#gistcomment-2888787
+# Source: https://gist.github.com/igrigorik/6666860
 gh()
 {
-	repoURL=https://github.$(git config remote.origin.url | cut -f2 -d.)
+	repoURL=$(git config remote.origin.url | sed "s~git@\(.*\):\(.*\)~https://\1/\2~" | sed "s~\(.*\).git\$~\1~")
 	branch=$(git branch | grep \* | cut -d ' ' -f2)
 	relativePath=$(git rev-parse --show-prefix)
 	google-chrome "$repoURL/tree/$branch/$relativePath$1"
