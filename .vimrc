@@ -186,6 +186,17 @@ for i in range(97,122)
   exe "set <m-".c.">=\e".c
 endfor
 
+" mappings to resize vim window
+" in an ideal world: noremap <c-right> <c-w>>
+" How to reproduce:
+" $ cat              # in shell, type cat and shift-enter
+" [1;5C            # press ctrl-right, you'll see ^[[1;5C
+"                      where  is the escape key
+noremap <esc>[1;5C <c-w>>
+noremap <esc>[1;5D <c-w><
+noremap <esc>[1;5A <c-w>+
+noremap <esc>[1;5B <c-w>-
+
 " command mode
 cnoremap <c-u> <c-e><c-u>
 cnoremap <m-f> <s-right>
