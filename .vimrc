@@ -271,8 +271,16 @@ endfunction
 " note: - unlike google-chrome, xdg-open need https:// to be in the URL
 "       - if the default browser is chrome, xdg-open will print "Opening in
 "         existing browser session"
-" https://github.com/vim/vim/issues/4738
-nnoremap gx :sil !xdg-open '<cWORD>' > /dev/null<cr>:redr!<cr>
+" https://github.com/vim/vim/issues/4738#issuecomment-798790444
+function! OpenURLUnderCursor()
+	let s:uri = expand('<cWORD>')
+	let s:uri = matchstr(s:uri, "[a-z]*:\/\/[^ >,;)'\"]*")
+	if s:uri != ''
+		silent exec "!xdg-open '".s:uri."' > /dev/null"
+		:redraw!
+	endif
+endfunction
+nnoremap gx :call OpenURLUnderCursor()<CR>
 " sil[ent] --> obliterate "Press ENTER or type command to continue" from shell
 "
 " redr[aw]! --> redraw vim screen after m̶e̶s̶s̶e̶d̶ ̶u̶p̶ silenced by sil[ent]
