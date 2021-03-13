@@ -201,6 +201,9 @@ noremap <esc>[1;5D <c-w><
 noremap <esc>[1;5A <c-w>+
 noremap <esc>[1;5B <c-w>-
 
+" ctrl-w t  -->  "split" to new tab
+nnoremap <c-w>t <c-w>s<c-w>T
+
 " command mode
 cnoremap <c-u> <c-e><c-u>
 cnoremap <m-f> <s-right>
