@@ -57,6 +57,10 @@ function SetTabSettings()
 	call SetTabShifting()
 endfunction
 
+" like tmux, this should be the default
+set splitright
+set splitbelow
+
 set nu rnu
 set is hls ic
 set wildignore=*.class
