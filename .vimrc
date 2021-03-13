@@ -286,6 +286,10 @@ noremap <expr> k v:count ? 'k' : 'gk'
 inoremap <C-l> <esc>
 vnoremap <C-l> <esc>
 
+" when there are multiple definitions, select 1 in a quick dialog
+" see  -->  :h g
+nnoremap <c-]> g<c-]>
+
 " switch buffer to terminal
 " :ter[minal]  -->  open terminal in NEW window
 nnoremap <c-s> :ter ++curwin<cr>
