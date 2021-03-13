@@ -275,6 +275,7 @@ endfunction
 function! OpenURLUnderCursor()
 	let s:uri = expand('<cWORD>')
 	let s:uri = matchstr(s:uri, "[a-z]*:\/\/[^ >,;)'\"]*")
+	let s:uri = substitute(s:uri, '#', '\\#', '')
 	if s:uri != ''
 		silent exec "!xdg-open '".s:uri."' > /dev/null"
 		:redraw!
