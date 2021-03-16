@@ -353,7 +353,8 @@ au FileType python set tags+=~/.local/lib/python2.7/site-packages/tags
 " https://stackoverflow.com/a/2517412/9157799
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
 " :h exe
-command! MyGitBlame exe '!git log -L' line("'<").','.line("'>").':'.expand('%:t')
+set autochdir "https://vi.stackexchange.com/a/11904/20429
+command! MyGitBlame exe '!git log -L' line("'<").','.line("'>").':'.expand('%')
 noremap <c-b> :<c-u>MyGitBlame<cr>
 
 " allow switching from terminal or modified file buffer
