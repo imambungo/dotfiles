@@ -357,8 +357,8 @@ au BufRead * exe 'cd %:h | sil cd `git rev-parse --show-toplevel`'
 " https://stackoverflow.com/a/2517412/9157799
 " https://vim.fandom.com/wiki/Get_the_name_of_the_current_file
 " :h exe
-command! MyGitBlame exe '!git log -L' line("'<").','.line("'>").':'.expand('%')
-noremap <c-b> :<c-u>MyGitBlame<cr>
+command! MyGitBlame exe 'silent !git log -L' line("'<").','.line("'>").':'.expand('%')
+noremap <c-b> :<c-u>MyGitBlame<cr>:redr!<cr>
 
 " allow switching from terminal or modified file buffer
 set hidden
