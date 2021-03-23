@@ -95,13 +95,15 @@ hi ColorColumn ctermbg=239
 set foldmethod=indent
 " au BufRead source: https://stackoverflow.com/a/8316817/9157799
 au BufRead * normal zR
-" below: save fold state
+" save fold state
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
-" below: don't save the options
+" but don't save the options (h: viewoptions)
 " https://vi.stackexchange.com/q/24602/20429
 set viewoptions-=options
 
+
+" :Mru <tab>
 " MRU (Most Recently Used)
 " source: https://stackoverflow.com/a/22701319/9157799
 " this is our 'main' function: it couldn't be simpler
@@ -118,6 +120,7 @@ endfunction
 " it accepts only one argument
 " it's set to use the function above for completion
 command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
+
 
 " https://vi.stackexchange.com/a/105/20429
 set laststatus=2
