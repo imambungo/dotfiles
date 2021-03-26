@@ -102,25 +102,9 @@ autocmd BufWinEnter *.* silent loadview
 " https://vi.stackexchange.com/q/24602/20429
 set viewoptions-=options
 
-
-" :Mru <tab>
-" MRU (Most Recently Used)
-" source: https://stackoverflow.com/a/22701319/9157799
-" this is our 'main' function: it couldn't be simpler
-function! Mru(arg)
-    execute 'edit ' . a:arg
-endfunction
-
-" the completion function, again it's very simple
-function! MRUComplete(ArgLead, CmdLine, CursorPos)
-    return filter(copy(v:oldfiles), 'v:val =~ a:ArgLead')
-endfunction
-
-" the actual command
-" it accepts only one argument
-" it's set to use the function above for completion
-command! -nargs=1 -complete=customlist,MRUComplete Mru call Mru(<f-args>)
-
+" :O       (capital O)       (:bro[wse] ol[dfiles] on steroids)
+" https://stackoverflow.com/a/21938644/9157799
+:command! O new +setl\ buftype=nofile | 0put =v:oldfiles | nnoremap <buffer> <CR> :e <C-r>=getline('.')<CR><CR> | 1
 
 " https://vi.stackexchange.com/a/105/20429
 set laststatus=2
