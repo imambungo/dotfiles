@@ -9,7 +9,9 @@ source ~/.config/up/up.sh
 source ~/Projects/Uncategorized/tangkapan/script
 source ~/.fzfrc.sh
 source ~/ch/script
+
 eval $(thefuck --alias)
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="$PATH:$HOME/development/flutter/bin"
 

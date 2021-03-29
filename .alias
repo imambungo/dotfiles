@@ -96,3 +96,6 @@ alias rr='cd `git root`'
 alias t='to `git root`/`git find`'
 alias e='temp_location=`git root`/`git find`; to $temp_location; v $temp_location'
 alias gitignore='gitignore_file=`git root`/.gitignore; v $gitignore_file'
+
+# https://github.com/BurntSushi/ripgrep/issues/623#issuecomment-659909044
+alias rg="rg --hidden --glob '!.git'"
