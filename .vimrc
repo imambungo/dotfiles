@@ -1,18 +1,24 @@
+" :PlugStatus
 " :PlugInstall
 " :PlugUpdate
+" :PlugClean[!]   (! -> clean without prompt)
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'dense-analysis/ale'             " linter
+Plug 'drewtempelmeyer/palenight.vim'  " theme
+Plug 'natebosch/vim-lsc'              " language server client
 
-Plug 'w0rp/ale'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'natebosch/vim-lsc'
-Plug 'natebosch/vim-lsc-dart'
+Plug 'natebosch/vim-lsc-dart'         " dart config of vim-lsc
+Plug 'dart-lang/dart-vim-plugin'      " syntax highlighting & indentation
 
 Plug 'wakatime/vim-wakatime'
 
 call plug#end()
+
+" https://github.com/natebosch/vim-lsc#configuration
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+let g:lsc_auto_map = v:true
 
 set tabstop=4
 set shiftwidth=0
@@ -112,18 +118,6 @@ set statusline+=%F\ %y
 
 " https://stackoverflow.com/a/1272247/9157799
 set fo+=t
-
-let g:lsc_auto_map = v:true
-
-" ALE config
-let g:ale_linters = {
-\   'dart': ['language_server'],
-\}
-let g:ale_fixers = {
-\   'dart': ['dartfmt'],
-\}
-
-let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
 " fix: Alt key mappings doesn't work
 " https://vi.stackexchange.com/a/10506/20429
