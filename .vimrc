@@ -284,7 +284,7 @@ au FileType python set tags+=~/.local/lib/python2.7/site-packages/tags
 
 " set working directory to the repo root of current buffer when available
 " https://stackoverflow.com/a/38082157/9157799
-au BufRead * exe 'cd %:h | sil cd `git rev-parse --show-toplevel`'
+au BufEnter * if expand('%') != '' | exe 'cd %:h | sil cd `git rev-parse --show-toplevel`'
 
 " TODO: give correct result when there are uncommitted changes
 " TODO: show all changes of the commits instead of just the highlighted one
