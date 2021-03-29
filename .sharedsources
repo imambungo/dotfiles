@@ -14,6 +14,7 @@ eval $(thefuck --alias)
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export PATH="$PATH:$HOME/Android/Sdk/tools"
 export PATH="$PATH:$HOME/Android/Sdk/tools/bin"
