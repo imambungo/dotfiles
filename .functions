@@ -203,6 +203,7 @@ ffsafe()
 
 findinfiles()
 {
+	echo "Stop using this, use rg (ripgrep) instead!"
 	if [ $# -gt 1 ]
 	then
 		echo "Put multiple words in double quotes!"

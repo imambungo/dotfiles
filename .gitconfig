@@ -10,7 +10,7 @@
 	pager = less -x1,5
 	editor = vim
 [alias]
-	ignored = !git ls-files -v | grep "^[[:lower:]]"
+	ignored = !git ls-files -v | grep "^[[:lower:]]" # https://stackoverflow.com/a/2363495/9157799
 	root = !pwd # https://stackoverflow.com/a/1890014/9157799
 	npm = !npm # git npm start / git npm run dev
 	find = !git ls-files | fzf # git find
